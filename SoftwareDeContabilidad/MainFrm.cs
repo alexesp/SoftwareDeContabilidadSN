@@ -26,5 +26,11 @@ namespace SoftwareDeContabilidad
         {
             this.Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.date_time_label3.Text = DateTime.Now.Date.ToShortDateString() + " | " +
+                DateTime.Now.ToLongDateString();
+        }
     }
 }
