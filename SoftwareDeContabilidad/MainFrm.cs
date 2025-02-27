@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace SoftwareDeContabilidad
 {
-    public partial class MainFrm: Form
+    public partial class MainFrm : Form
     {
         public MainFrm()
         {
             InitializeComponent();
+        }
+
+        private void min_button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void close_button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
