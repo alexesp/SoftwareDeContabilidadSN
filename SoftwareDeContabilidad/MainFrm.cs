@@ -30,7 +30,20 @@ namespace SoftwareDeContabilidad
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.date_time_label3.Text = DateTime.Now.Date.ToShortDateString() + " | " +
-                DateTime.Now.ToLongDateString();
+                DateTime.Now.ToLongTimeString();
+        }
+
+        private void background_comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string fn;
+                fn = Application.StartupPath;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

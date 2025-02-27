@@ -42,7 +42,7 @@
             label2 = new Label();
             user_label2 = new Label();
             user_pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
+            background_comboBox1 = new ComboBox();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             top_panel1.SuspendLayout();
@@ -148,12 +148,12 @@
             bott_panel2.Controls.Add(label2);
             bott_panel2.Controls.Add(user_label2);
             bott_panel2.Controls.Add(user_pictureBox1);
-            bott_panel2.Controls.Add(comboBox1);
+            bott_panel2.Controls.Add(background_comboBox1);
             bott_panel2.Controls.Add(label1);
             bott_panel2.Dock = DockStyle.Bottom;
-            bott_panel2.Location = new Point(0, 669);
+            bott_panel2.Location = new Point(0, 645);
             bott_panel2.Name = "bott_panel2";
-            bott_panel2.Size = new Size(893, 45);
+            bott_panel2.Size = new Size(893, 69);
             bott_panel2.TabIndex = 1;
             // 
             // date_time_label3
@@ -161,7 +161,7 @@
             date_time_label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             date_time_label3.Location = new Point(561, 6);
             date_time_label3.Name = "date_time_label3";
-            date_time_label3.Size = new Size(324, 23);
+            date_time_label3.Size = new Size(324, 40);
             date_time_label3.TabIndex = 5;
             date_time_label3.Text = "-";
             date_time_label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -171,7 +171,7 @@
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(525, 6);
             label2.Name = "label2";
-            label2.Size = new Size(30, 23);
+            label2.Size = new Size(30, 40);
             label2.TabIndex = 4;
             label2.Text = "-";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -181,7 +181,7 @@
             user_label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             user_label2.Location = new Point(401, 6);
             user_label2.Name = "user_label2";
-            user_label2.Size = new Size(108, 23);
+            user_label2.Size = new Size(108, 40);
             user_label2.TabIndex = 3;
             user_label2.Text = "-";
             user_label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -191,24 +191,25 @@
             user_pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             user_pictureBox1.Location = new Point(336, 0);
             user_pictureBox1.Name = "user_pictureBox1";
-            user_pictureBox1.Size = new Size(59, 35);
+            user_pictureBox1.Size = new Size(59, 46);
             user_pictureBox1.TabIndex = 2;
             user_pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // background_comboBox1
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Imagen 1", "Imagen 2", "Imagen 3", "Imagen 4", "Imagen 5", "Imagen 6" });
-            comboBox1.Location = new Point(147, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(180, 31);
-            comboBox1.TabIndex = 1;
+            background_comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            background_comboBox1.FormattingEnabled = true;
+            background_comboBox1.Items.AddRange(new object[] { "Imagen 1", "Imagen 2", "Imagen 3", "Imagen 4", "Imagen 5", "Imagen 6" });
+            background_comboBox1.Location = new Point(150, 11);
+            background_comboBox1.Name = "background_comboBox1";
+            background_comboBox1.Size = new Size(180, 31);
+            background_comboBox1.TabIndex = 1;
+            background_comboBox1.SelectedIndexChanged += background_comboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 6);
+            label1.Location = new Point(12, 14);
             label1.Name = "label1";
             label1.Size = new Size(133, 23);
             label1.TabIndex = 0;
@@ -251,7 +252,7 @@
         private Button info_button2;
         private Button button1;
         private Button button2;
-        private ComboBox comboBox1;
+        private ComboBox background_comboBox1;
         private Label label1;
         private Label user_label2;
         private PictureBox user_pictureBox1;
