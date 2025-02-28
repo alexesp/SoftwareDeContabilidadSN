@@ -58,5 +58,29 @@ namespace SoftwareDeContabilidad
             index = SoftwareDeContabilidad.Properties.Settings.Default.set_img_index;
             this.background_comboBox1.SelectedIndex = index;
         }
+
+        private void expand_button3_Click(object sender, EventArgs e)
+        {
+            this.treeView1.ExpandAll();
+        }
+
+        private void colaps_button3_Click(object sender, EventArgs e)
+        {
+            this.treeView1.CollapseAll();
+        }
+
+        private void cont_button1_Click(object sender, EventArgs e)
+        {
+           if(this.panel1.Visible== true)
+            {
+                this.panel1.Visible = false;
+                this.panel1.Refresh();
+            }
+           else
+            {
+                this.panel1.Visible = true;
+                this.panel1.Refresh();
+            }
+        }
     }
 }
