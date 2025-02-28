@@ -30,6 +30,15 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
+            TreeNode treeNode10 = new TreeNode("Clientes");
+            TreeNode treeNode11 = new TreeNode("Facturas de ventas");
+            TreeNode treeNode12 = new TreeNode("Facturas de compras");
+            TreeNode treeNode13 = new TreeNode("Facturas", new TreeNode[] { treeNode11, treeNode12 });
+            TreeNode treeNode14 = new TreeNode("Gastos");
+            TreeNode treeNode15 = new TreeNode("Ingresos");
+            TreeNode treeNode16 = new TreeNode("Pagos", new TreeNode[] { treeNode14, treeNode15 });
+            TreeNode treeNode17 = new TreeNode("Resumen de gastos");
+            TreeNode treeNode18 = new TreeNode("Todas las herramientas", new TreeNode[] { treeNode10, treeNode13, treeNode16, treeNode17 });
             top_panel1 = new Panel();
             button2 = new Button();
             button1 = new Button();
@@ -45,13 +54,19 @@
             background_comboBox1 = new ComboBox();
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            treeView1 = new TreeView();
+            imageList1 = new ImageList(components);
             top_panel1.SuspendLayout();
             bott_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // top_panel1
             // 
+            top_panel1.BackgroundImage = Properties.Resources.butt_background;
+            top_panel1.BackgroundImageLayout = ImageLayout.Stretch;
             top_panel1.Controls.Add(button2);
             top_panel1.Controls.Add(button1);
             top_panel1.Controls.Add(info_button2);
@@ -70,7 +85,7 @@
             button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Image = Properties.Resources.top_Help_butt;
-            button2.Location = new Point(504, 12);
+            button2.Location = new Point(504, 8);
             button2.Name = "button2";
             button2.Size = new Size(162, 70);
             button2.TabIndex = 5;
@@ -84,7 +99,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = Properties.Resources.top_Tools_butt;
-            button1.Location = new Point(336, 12);
+            button1.Location = new Point(336, 8);
             button1.Name = "button1";
             button1.Size = new Size(162, 70);
             button1.TabIndex = 4;
@@ -98,7 +113,7 @@
             info_button2.BackgroundImageLayout = ImageLayout.Stretch;
             info_button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             info_button2.Image = Properties.Resources.top_report_butt;
-            info_button2.Location = new Point(174, 12);
+            info_button2.Location = new Point(174, 8);
             info_button2.Name = "info_button2";
             info_button2.Size = new Size(156, 70);
             info_button2.TabIndex = 3;
@@ -112,7 +127,7 @@
             cont_button1.BackgroundImageLayout = ImageLayout.Stretch;
             cont_button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cont_button1.Image = Properties.Resources.top_input_butt;
-            cont_button1.Location = new Point(12, 12);
+            cont_button1.Location = new Point(12, 8);
             cont_button1.Name = "cont_button1";
             cont_button1.Size = new Size(156, 70);
             cont_button1.TabIndex = 2;
@@ -221,11 +236,71 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(treeView1);
+            panel1.Location = new Point(12, 93);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(340, 456);
+            panel1.TabIndex = 2;
+            // 
+            // treeView1
+            // 
+            treeView1.Dock = DockStyle.Fill;
+            treeView1.Indent = 40;
+            treeView1.ItemHeight = 40;
+            treeView1.Location = new Point(0, 0);
+            treeView1.Name = "treeView1";
+            treeNode10.Name = "Clientes";
+            treeNode10.Text = "Clientes";
+            treeNode11.Name = "Facturas_de_ventas";
+            treeNode11.Text = "Facturas de ventas";
+            treeNode12.Name = "Facturas_de_compras";
+            treeNode12.Text = "Facturas de compras";
+            treeNode13.Name = "Facturas";
+            treeNode13.Text = "Facturas";
+            treeNode14.Name = "Gastos";
+            treeNode14.Text = "Gastos";
+            treeNode15.Name = "Ingresos";
+            treeNode15.Text = "Ingresos";
+            treeNode16.Name = "Pagos";
+            treeNode16.Text = "Pagos";
+            treeNode17.Name = "Resumen_de_gastos";
+            treeNode17.Text = "Resumen de gastos";
+            treeNode18.Name = "Root";
+            treeNode18.Text = "Todas las herramientas";
+            treeView1.Nodes.AddRange(new TreeNode[] { treeNode18 });
+            treeView1.RightToLeft = RightToLeft.Yes;
+            treeView1.Size = new Size(338, 454);
+            treeView1.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "expand.png");
+            imageList1.Images.SetKeyName(1, "products.png");
+            imageList1.Images.SetKeyName(2, "tree_customers.png");
+            imageList1.Images.SetKeyName(3, "tree_expense.png");
+            imageList1.Images.SetKeyName(4, "tree_invoice.png");
+            imageList1.Images.SetKeyName(5, "tree_payment.png");
+            imageList1.Images.SetKeyName(6, "tree_purchase_bill.png");
+            imageList1.Images.SetKeyName(7, "tree_receive.png");
+            imageList1.Images.SetKeyName(8, "tree_reports.png");
+            imageList1.Images.SetKeyName(9, "tree_root.png");
+            imageList1.Images.SetKeyName(10, "tree_sale_invoice.png");
+            imageList1.Images.SetKeyName(11, "tree_spend.png");
+            imageList1.Images.SetKeyName(12, "collapse.png");
+            // 
             // MainFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(893, 714);
+            Controls.Add(panel1);
             Controls.Add(bott_panel2);
             Controls.Add(top_panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -235,10 +310,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Contabilidad";
             WindowState = FormWindowState.Maximized;
+            Load += MainFrm_Load;
             top_panel1.ResumeLayout(false);
             bott_panel2.ResumeLayout(false);
             bott_panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)user_pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -259,5 +336,8 @@
         private Label label2;
         private Label date_time_label3;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel1;
+        private TreeView treeView1;
+        private ImageList imageList1;
     }
 }

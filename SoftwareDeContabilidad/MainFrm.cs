@@ -24,6 +24,11 @@ namespace SoftwareDeContabilidad
 
         private void close_button1_Click(object sender, EventArgs e)
         {
+
+            SoftwareDeContabilidad.Properties.Settings.Default.set_img_index = this.background_comboBox1.SelectedIndex;
+            SoftwareDeContabilidad.Properties.Settings.Default.Save();
+
+
             this.Close();
         }
 
@@ -38,12 +43,20 @@ namespace SoftwareDeContabilidad
             try
             {
                 string fn;
-                fn = Application.StartupPath;
+                fn = Application.StartupPath + "Data\\Pics\\" + this.background_comboBox1.SelectedIndex.ToString() + ".jpg";
+                this.BackgroundImage = Image.FromFile(fn);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void MainFrm_Load(object sender, EventArgs e)
+        {
+            int index;
+            index = SoftwareDeContabilidad.Properties.Settings.Default.set_img_index;
+            this.background_comboBox1.SelectedIndex = index;
         }
     }
 }
