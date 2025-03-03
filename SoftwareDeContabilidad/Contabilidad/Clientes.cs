@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace SoftwareDeContabilidad.Contabilidad
 {
-    public partial class Clientes: Form
+    public partial class Clientes : Form
     {
         public Clientes()
         {
             InitializeComponent();
         }
+
+      
     }
 }
