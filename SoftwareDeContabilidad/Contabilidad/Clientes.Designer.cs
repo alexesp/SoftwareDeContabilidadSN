@@ -28,137 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
+            new_butt = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            toolStripButton2 = new ToolStripButton();
+            edit_butt = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
-            toolStripButton3 = new ToolStripButton();
+            del_butt = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
-            toolStripButton4 = new ToolStripButton();
+            save_butt = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
-            toolStripButton5 = new ToolStripButton();
+            cancel_butt = new ToolStripButton();
             toolStripSeparator5 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
-            textBox9 = new TextBox();
+            comment_textBox9 = new TextBox();
             label9 = new Label();
-            textBox8 = new TextBox();
+            direc_textBox8 = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            email_textBox7 = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
+            mobil_textBox6 = new TextBox();
             label6 = new Label();
-            textBox5 = new TextBox();
+            telefono_textBox5 = new TextBox();
             label5 = new Label();
-            textBox4 = new TextBox();
+            genero_textBox4 = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            second_name_textBox3 = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            first_name_textBox2 = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            id_textBox1 = new TextBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
-            label12 = new Label();
-            reg_date_label13 = new Label();
-            label11 = new Label();
-            reg_user_label10 = new Label();
-            label14 = new Label();
+            reg_time_label14 = new Label();
             reg_time_label15 = new Label();
+            reg_date_label12 = new Label();
+            reg_date_label13 = new Label();
+            reg_user_label11 = new Label();
+            reg_user_label10 = new Label();
+            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
+            bindingSource1 = new BindingSource(components);
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripSeparator1, toolStripButton2, toolStripSeparator2, toolStripButton3, toolStripSeparator3, toolStripButton4, toolStripSeparator4, toolStripButton5, toolStripSeparator5 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { new_butt, toolStripSeparator1, edit_butt, toolStripSeparator2, del_butt, toolStripSeparator3, save_butt, toolStripSeparator4, cancel_butt, toolStripSeparator5 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // new_butt
             // 
-            toolStripButton1.AutoSize = false;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(90, 51);
-            toolStripButton1.Text = "Nuevo";
-            toolStripButton1.TextImageRelation = TextImageRelation.ImageAboveText;
+            new_butt.AutoSize = false;
+            new_butt.Image = (Image)resources.GetObject("new_butt.Image");
+            new_butt.ImageScaling = ToolStripItemImageScaling.None;
+            new_butt.ImageTransparentColor = Color.Magenta;
+            new_butt.Name = "new_butt";
+            new_butt.Size = new Size(90, 51);
+            new_butt.Text = "Nuevo";
+            new_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 54);
             // 
-            // toolStripButton2
+            // edit_butt
             // 
-            toolStripButton2.AutoSize = false;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(90, 51);
-            toolStripButton2.Text = "Editar";
-            toolStripButton2.TextImageRelation = TextImageRelation.ImageAboveText;
+            edit_butt.AutoSize = false;
+            edit_butt.Image = (Image)resources.GetObject("edit_butt.Image");
+            edit_butt.ImageScaling = ToolStripItemImageScaling.None;
+            edit_butt.ImageTransparentColor = Color.Magenta;
+            edit_butt.Name = "edit_butt";
+            edit_butt.Size = new Size(90, 51);
+            edit_butt.Text = "Editar";
+            edit_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(6, 54);
             // 
-            // toolStripButton3
+            // del_butt
             // 
-            toolStripButton3.AutoSize = false;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(90, 51);
-            toolStripButton3.Text = "Eliminar";
-            toolStripButton3.TextImageRelation = TextImageRelation.ImageAboveText;
+            del_butt.AutoSize = false;
+            del_butt.Image = (Image)resources.GetObject("del_butt.Image");
+            del_butt.ImageScaling = ToolStripItemImageScaling.None;
+            del_butt.ImageTransparentColor = Color.Magenta;
+            del_butt.Name = "del_butt";
+            del_butt.Size = new Size(90, 51);
+            del_butt.Text = "Eliminar";
+            del_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 54);
             // 
-            // toolStripButton4
+            // save_butt
             // 
-            toolStripButton4.AutoSize = false;
-            toolStripButton4.Enabled = false;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(90, 51);
-            toolStripButton4.Text = "Guardar";
-            toolStripButton4.TextImageRelation = TextImageRelation.ImageAboveText;
+            save_butt.AutoSize = false;
+            save_butt.Enabled = false;
+            save_butt.Image = (Image)resources.GetObject("save_butt.Image");
+            save_butt.ImageScaling = ToolStripItemImageScaling.None;
+            save_butt.ImageTransparentColor = Color.Magenta;
+            save_butt.Name = "save_butt";
+            save_butt.Size = new Size(90, 51);
+            save_butt.Text = "Guardar";
+            save_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(6, 54);
             // 
-            // toolStripButton5
+            // cancel_butt
             // 
-            toolStripButton5.AutoSize = false;
-            toolStripButton5.Enabled = false;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageScaling = ToolStripItemImageScaling.None;
-            toolStripButton5.ImageTransparentColor = Color.Magenta;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(90, 51);
-            toolStripButton5.Text = "Cancelar";
-            toolStripButton5.TextImageRelation = TextImageRelation.ImageAboveText;
+            cancel_butt.AutoSize = false;
+            cancel_butt.Enabled = false;
+            cancel_butt.Image = (Image)resources.GetObject("cancel_butt.Image");
+            cancel_butt.ImageScaling = ToolStripItemImageScaling.None;
+            cancel_butt.ImageTransparentColor = Color.Magenta;
+            cancel_butt.Name = "cancel_butt";
+            cancel_butt.Size = new Size(90, 51);
+            cancel_butt.Text = "Cancelar";
+            cancel_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator5
             // 
@@ -168,23 +173,23 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Silver;
-            groupBox1.Controls.Add(textBox9);
+            groupBox1.Controls.Add(comment_textBox9);
             groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox8);
+            groupBox1.Controls.Add(direc_textBox8);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox7);
+            groupBox1.Controls.Add(email_textBox7);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(mobil_textBox6);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(telefono_textBox5);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(genero_textBox4);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(second_name_textBox3);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(first_name_textBox2);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(id_textBox1);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 59);
             groupBox1.Name = "groupBox1";
@@ -193,13 +198,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
             // 
-            // textBox9
+            // comment_textBox9
             // 
-            textBox9.Location = new Point(194, 323);
-            textBox9.Name = "textBox9";
-            textBox9.ReadOnly = true;
-            textBox9.Size = new Size(557, 30);
-            textBox9.TabIndex = 17;
+            comment_textBox9.Location = new Point(194, 323);
+            comment_textBox9.Name = "comment_textBox9";
+            comment_textBox9.ReadOnly = true;
+            comment_textBox9.Size = new Size(557, 30);
+            comment_textBox9.TabIndex = 17;
             // 
             // label9
             // 
@@ -210,13 +215,13 @@
             label9.TabIndex = 16;
             label9.Text = "Comentario:";
             // 
-            // textBox8
+            // direc_textBox8
             // 
-            textBox8.Location = new Point(194, 287);
-            textBox8.Name = "textBox8";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(557, 30);
-            textBox8.TabIndex = 15;
+            direc_textBox8.Location = new Point(194, 287);
+            direc_textBox8.Name = "direc_textBox8";
+            direc_textBox8.ReadOnly = true;
+            direc_textBox8.Size = new Size(557, 30);
+            direc_textBox8.TabIndex = 15;
             // 
             // label8
             // 
@@ -227,13 +232,13 @@
             label8.TabIndex = 14;
             label8.Text = "Direccion:";
             // 
-            // textBox7
+            // email_textBox7
             // 
-            textBox7.Location = new Point(194, 251);
-            textBox7.Name = "textBox7";
-            textBox7.ReadOnly = true;
-            textBox7.Size = new Size(316, 30);
-            textBox7.TabIndex = 13;
+            email_textBox7.Location = new Point(194, 251);
+            email_textBox7.Name = "email_textBox7";
+            email_textBox7.ReadOnly = true;
+            email_textBox7.Size = new Size(316, 30);
+            email_textBox7.TabIndex = 13;
             // 
             // label7
             // 
@@ -244,13 +249,13 @@
             label7.TabIndex = 12;
             label7.Text = "Email:";
             // 
-            // textBox6
+            // mobil_textBox6
             // 
-            textBox6.Location = new Point(194, 215);
-            textBox6.Name = "textBox6";
-            textBox6.ReadOnly = true;
-            textBox6.Size = new Size(316, 30);
-            textBox6.TabIndex = 11;
+            mobil_textBox6.Location = new Point(194, 215);
+            mobil_textBox6.Name = "mobil_textBox6";
+            mobil_textBox6.ReadOnly = true;
+            mobil_textBox6.Size = new Size(316, 30);
+            mobil_textBox6.TabIndex = 11;
             // 
             // label6
             // 
@@ -261,13 +266,13 @@
             label6.TabIndex = 10;
             label6.Text = "Telefono:";
             // 
-            // textBox5
+            // telefono_textBox5
             // 
-            textBox5.Location = new Point(194, 182);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(316, 30);
-            textBox5.TabIndex = 9;
+            telefono_textBox5.Location = new Point(194, 182);
+            telefono_textBox5.Name = "telefono_textBox5";
+            telefono_textBox5.ReadOnly = true;
+            telefono_textBox5.Size = new Size(316, 30);
+            telefono_textBox5.TabIndex = 9;
             // 
             // label5
             // 
@@ -278,13 +283,13 @@
             label5.TabIndex = 8;
             label5.Text = "Telefono fijo:";
             // 
-            // textBox4
+            // genero_textBox4
             // 
-            textBox4.Location = new Point(194, 146);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(316, 30);
-            textBox4.TabIndex = 7;
+            genero_textBox4.Location = new Point(194, 146);
+            genero_textBox4.Name = "genero_textBox4";
+            genero_textBox4.ReadOnly = true;
+            genero_textBox4.Size = new Size(316, 30);
+            genero_textBox4.TabIndex = 7;
             // 
             // label4
             // 
@@ -295,13 +300,13 @@
             label4.TabIndex = 6;
             label4.Text = "Genero:";
             // 
-            // textBox3
+            // second_name_textBox3
             // 
-            textBox3.Location = new Point(194, 110);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(316, 30);
-            textBox3.TabIndex = 5;
+            second_name_textBox3.Location = new Point(194, 110);
+            second_name_textBox3.Name = "second_name_textBox3";
+            second_name_textBox3.ReadOnly = true;
+            second_name_textBox3.Size = new Size(316, 30);
+            second_name_textBox3.TabIndex = 5;
             // 
             // label3
             // 
@@ -312,13 +317,13 @@
             label3.TabIndex = 4;
             label3.Text = "Apellido:";
             // 
-            // textBox2
+            // first_name_textBox2
             // 
-            textBox2.Location = new Point(194, 74);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(316, 30);
-            textBox2.TabIndex = 3;
+            first_name_textBox2.Location = new Point(194, 74);
+            first_name_textBox2.Name = "first_name_textBox2";
+            first_name_textBox2.ReadOnly = true;
+            first_name_textBox2.Size = new Size(316, 30);
+            first_name_textBox2.TabIndex = 3;
             // 
             // label2
             // 
@@ -329,13 +334,13 @@
             label2.TabIndex = 2;
             label2.Text = "Nombre:";
             // 
-            // textBox1
+            // id_textBox1
             // 
-            textBox1.Location = new Point(194, 38);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(316, 30);
-            textBox1.TabIndex = 1;
+            id_textBox1.Location = new Point(194, 38);
+            id_textBox1.Name = "id_textBox1";
+            id_textBox1.ReadOnly = true;
+            id_textBox1.Size = new Size(316, 30);
+            id_textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -358,11 +363,11 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label14);
+            panel1.Controls.Add(reg_time_label14);
             panel1.Controls.Add(reg_time_label15);
-            panel1.Controls.Add(label12);
+            panel1.Controls.Add(reg_date_label12);
             panel1.Controls.Add(reg_date_label13);
-            panel1.Controls.Add(label11);
+            panel1.Controls.Add(reg_user_label11);
             panel1.Controls.Add(reg_user_label10);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 629);
@@ -370,13 +375,30 @@
             panel1.Size = new Size(800, 41);
             panel1.TabIndex = 3;
             // 
-            // label12
+            // reg_time_label14
             // 
-            label12.Location = new Point(404, 8);
-            label12.Name = "label12";
-            label12.Size = new Size(132, 23);
-            label12.TabIndex = 4;
-            label12.Text = "-";
+            reg_time_label14.Location = new Point(686, 8);
+            reg_time_label14.Name = "reg_time_label14";
+            reg_time_label14.Size = new Size(102, 23);
+            reg_time_label14.TabIndex = 6;
+            reg_time_label14.Text = "-";
+            // 
+            // reg_time_label15
+            // 
+            reg_time_label15.AutoSize = true;
+            reg_time_label15.Location = new Point(542, 8);
+            reg_time_label15.Name = "reg_time_label15";
+            reg_time_label15.Size = new Size(138, 23);
+            reg_time_label15.TabIndex = 5;
+            reg_time_label15.Text = "Hora de registro:";
+            // 
+            // reg_date_label12
+            // 
+            reg_date_label12.Location = new Point(404, 8);
+            reg_date_label12.Name = "reg_date_label12";
+            reg_date_label12.Size = new Size(132, 23);
+            reg_date_label12.TabIndex = 4;
+            reg_date_label12.Text = "-";
             // 
             // reg_date_label13
             // 
@@ -387,13 +409,13 @@
             reg_date_label13.TabIndex = 3;
             reg_date_label13.Text = "Fecha de registro:";
             // 
-            // label11
+            // reg_user_label11
             // 
-            label11.Location = new Point(175, 8);
-            label11.Name = "label11";
-            label11.Size = new Size(83, 23);
-            label11.TabIndex = 2;
-            label11.Text = "-";
+            reg_user_label11.Location = new Point(175, 8);
+            reg_user_label11.Name = "reg_user_label11";
+            reg_user_label11.Size = new Size(83, 23);
+            reg_user_label11.TabIndex = 2;
+            reg_user_label11.Text = "-";
             // 
             // reg_user_label10
             // 
@@ -404,22 +426,11 @@
             reg_user_label10.TabIndex = 1;
             reg_user_label10.Text = "Usuario Registrado:";
             // 
-            // label14
+            // accDataSet1
             // 
-            label14.Location = new Point(686, 8);
-            label14.Name = "label14";
-            label14.Size = new Size(102, 23);
-            label14.TabIndex = 6;
-            label14.Text = "-";
-            // 
-            // reg_time_label15
-            // 
-            reg_time_label15.AutoSize = true;
-            reg_time_label15.Location = new Point(542, 8);
-            reg_time_label15.Name = "reg_time_label15";
-            reg_time_label15.Size = new Size(138, 23);
-            reg_time_label15.TabIndex = 5;
-            reg_time_label15.Text = "Hora de registro:";
+            accDataSet1.DataSetName = "AccDataSet";
+            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Clientes
             // 
@@ -442,6 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -452,39 +465,41 @@
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
         private Panel panel1;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton new_butt;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton toolStripButton2;
+        private ToolStripButton edit_butt;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton3;
+        private ToolStripButton del_butt;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton toolStripButton4;
+        private ToolStripButton save_butt;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton toolStripButton5;
+        private ToolStripButton cancel_butt;
         private ToolStripSeparator toolStripSeparator5;
-        private TextBox textBox1;
+        private TextBox id_textBox1;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox first_name_textBox2;
         private Label label2;
-        private TextBox textBox4;
+        private TextBox genero_textBox4;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox second_name_textBox3;
         private Label label3;
-        private TextBox textBox5;
+        private TextBox telefono_textBox5;
         private Label label5;
-        private TextBox textBox6;
+        private TextBox mobil_textBox6;
         private Label label6;
-        private TextBox textBox7;
+        private TextBox email_textBox7;
         private Label label7;
-        private TextBox textBox9;
+        private TextBox comment_textBox9;
         private Label label9;
-        private TextBox textBox8;
+        private TextBox direc_textBox8;
         private Label label8;
         private Label reg_user_label10;
-        private Label label11;
-        private Label label12;
+        private Label reg_user_label11;
+        private Label reg_date_label12;
         private Label reg_date_label13;
-        private Label label14;
+        private Label reg_time_label14;
         private Label reg_time_label15;
+        private DataSet.AccDataSet accDataSet1;
+        private BindingSource bindingSource1;
     }
 }
