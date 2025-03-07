@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoftwareDeContabilidad.Contabilidad;
 
 namespace SoftwareDeContabilidad
 {
@@ -71,15 +72,25 @@ namespace SoftwareDeContabilidad
 
         private void cont_button1_Click(object sender, EventArgs e)
         {
-           if(this.panel1.Visible== true)
+            if (this.panel1.Visible == true)
             {
                 this.panel1.Visible = false;
                 this.panel1.Refresh();
             }
-           else
+            else
             {
                 this.panel1.Visible = true;
                 this.panel1.Refresh();
+            }
+        }
+
+        private void treeView1_DoubleClick(object sender, EventArgs e)
+        {
+            if(this.treeView1.SelectedNode.Name == "Clientes")
+            {
+                SoftwareDeContabilidad.Contabilidad.Clientes frm = new Clientes();
+                frm.MdiParent = this;
+                frm.Show();
             }
         }
     }

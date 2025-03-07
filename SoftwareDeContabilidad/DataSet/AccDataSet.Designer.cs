@@ -2285,7 +2285,7 @@ SELECT ID, FirstName, LastName, Gender, LandLine, CellNum, Email, Address, Comme
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Customers.*, ID AS Expr1, FirstName AS Expr2, LastName AS Expr3, Gender AS" +
@@ -2308,6 +2308,21 @@ WHERE (ID = @SEARCH_ID)";
             param.IsNullable = true;
             param.SourceColumn = "ID";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT ID, FirstName, LastName, Gender, LandLine, CellNum, Email, Address, Comment, RegUser, RegDate, RegTime, ID AS Expr1, FirstName AS Expr2, LastName AS Expr3, Gender AS Expr4, LandLine AS Expr5, CellNum AS Expr6, Email AS Expr7, Address AS Expr8, 
+             Comment AS Expr9, RegUser AS Expr10, RegDate AS Expr11, RegTime AS Expr12
+FROM   Customers
+WHERE (LastName LIKE @Search_lname)
+ORDER BY LastName";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@Search_lname";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 70;
+            param.IsNullable = true;
+            param.SourceColumn = "LastName";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2330,6 +2345,25 @@ WHERE (ID = @SEARCH_ID)";
         public virtual int FillBy_id(AccDataSet.CustomersDataTable dataTable, int SEARCH_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(SEARCH_ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_last_name(AccDataSet.CustomersDataTable dataTable, string Search_lname) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Search_lname == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Search_lname));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

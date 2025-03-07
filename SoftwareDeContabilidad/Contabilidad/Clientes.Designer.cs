@@ -44,13 +44,6 @@
             search_butt = new ToolStripButton();
             toolStripSeparator6 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
-            search_panel2 = new Panel();
-            search_lname_button2 = new Button();
-            search_id_button1 = new Button();
-            search_lname_textBox2 = new TextBox();
-            search_id_textBox1 = new TextBox();
-            label11 = new Label();
-            label10 = new Label();
             comboBox1 = new ComboBox();
             bindingSource1 = new BindingSource(components);
             accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
@@ -71,6 +64,13 @@
             label2 = new Label();
             id_textBox1 = new TextBox();
             label1 = new Label();
+            search_panel2 = new Panel();
+            search_lname_button2 = new Button();
+            search_id_button1 = new Button();
+            search_lname_textBox2 = new TextBox();
+            search_id_textBox1 = new TextBox();
+            label11 = new Label();
+            label10 = new Label();
             dataGridView1 = new DataGridView();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -94,9 +94,9 @@
             customersTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.CustomersTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
-            search_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
+            search_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -219,7 +219,6 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Silver;
-            groupBox1.Controls.Add(search_panel2);
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(comment_textBox9);
             groupBox1.Controls.Add(label9);
@@ -244,75 +243,6 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
-            // 
-            // search_panel2
-            // 
-            search_panel2.Controls.Add(search_lname_button2);
-            search_panel2.Controls.Add(search_id_button1);
-            search_panel2.Controls.Add(search_lname_textBox2);
-            search_panel2.Controls.Add(search_id_textBox1);
-            search_panel2.Controls.Add(label11);
-            search_panel2.Controls.Add(label10);
-            search_panel2.Location = new Point(532, 15);
-            search_panel2.Name = "search_panel2";
-            search_panel2.Size = new Size(238, 103);
-            search_panel2.TabIndex = 19;
-            search_panel2.Visible = false;
-            // 
-            // search_lname_button2
-            // 
-            search_lname_button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            search_lname_button2.Location = new Point(163, 56);
-            search_lname_button2.Name = "search_lname_button2";
-            search_lname_button2.Size = new Size(65, 33);
-            search_lname_button2.TabIndex = 5;
-            search_lname_button2.Text = "Buscar";
-            search_lname_button2.TextAlign = ContentAlignment.MiddleLeft;
-            search_lname_button2.UseVisualStyleBackColor = true;
-            // 
-            // search_id_button1
-            // 
-            search_id_button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            search_id_button1.Location = new Point(164, 8);
-            search_id_button1.Name = "search_id_button1";
-            search_id_button1.Size = new Size(65, 33);
-            search_id_button1.TabIndex = 4;
-            search_id_button1.Text = "Buscar";
-            search_id_button1.TextAlign = ContentAlignment.MiddleLeft;
-            search_id_button1.UseVisualStyleBackColor = true;
-            search_id_button1.Click += search_id_button1_Click;
-            // 
-            // search_lname_textBox2
-            // 
-            search_lname_textBox2.Location = new Point(76, 60);
-            search_lname_textBox2.Name = "search_lname_textBox2";
-            search_lname_textBox2.Size = new Size(81, 30);
-            search_lname_textBox2.TabIndex = 3;
-            // 
-            // search_id_textBox1
-            // 
-            search_id_textBox1.Location = new Point(76, 10);
-            search_id_textBox1.Name = "search_id_textBox1";
-            search_id_textBox1.Size = new Size(81, 30);
-            search_id_textBox1.TabIndex = 2;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(3, 62);
-            label11.Name = "label11";
-            label11.Size = new Size(76, 23);
-            label11.TabIndex = 1;
-            label11.Text = "Apellido:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(3, 13);
-            label10.Name = "label10";
-            label10.Size = new Size(29, 23);
-            label10.TabIndex = 0;
-            label10.Text = "Id:";
             // 
             // comboBox1
             // 
@@ -480,6 +410,76 @@
             label1.Size = new Size(29, 23);
             label1.TabIndex = 0;
             label1.Text = "Id:";
+            // 
+            // search_panel2
+            // 
+            search_panel2.Controls.Add(search_lname_button2);
+            search_panel2.Controls.Add(search_id_button1);
+            search_panel2.Controls.Add(search_lname_textBox2);
+            search_panel2.Controls.Add(search_id_textBox1);
+            search_panel2.Controls.Add(label11);
+            search_panel2.Controls.Add(label10);
+            search_panel2.Location = new Point(537, 61);
+            search_panel2.Name = "search_panel2";
+            search_panel2.Size = new Size(250, 125);
+            search_panel2.TabIndex = 4;
+            search_panel2.Visible = false;
+            // 
+            // search_lname_button2
+            // 
+            search_lname_button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            search_lname_button2.Location = new Point(172, 69);
+            search_lname_button2.Name = "search_lname_button2";
+            search_lname_button2.Size = new Size(65, 33);
+            search_lname_button2.TabIndex = 11;
+            search_lname_button2.Text = "Buscar";
+            search_lname_button2.TextAlign = ContentAlignment.MiddleLeft;
+            search_lname_button2.UseVisualStyleBackColor = true;
+            search_lname_button2.Click += search_lname_button2_Click;
+            // 
+            // search_id_button1
+            // 
+            search_id_button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            search_id_button1.Location = new Point(173, 21);
+            search_id_button1.Name = "search_id_button1";
+            search_id_button1.Size = new Size(65, 33);
+            search_id_button1.TabIndex = 10;
+            search_id_button1.Text = "Buscar";
+            search_id_button1.TextAlign = ContentAlignment.MiddleLeft;
+            search_id_button1.UseVisualStyleBackColor = true;
+            search_id_button1.Click += search_id_button1_Click_1;
+            // 
+            // search_lname_textBox2
+            // 
+            search_lname_textBox2.Location = new Point(85, 73);
+            search_lname_textBox2.Name = "search_lname_textBox2";
+            search_lname_textBox2.Size = new Size(81, 30);
+            search_lname_textBox2.TabIndex = 9;
+            // 
+            // search_id_textBox1
+            // 
+            search_id_textBox1.Location = new Point(85, 23);
+            search_id_textBox1.Name = "search_id_textBox1";
+            search_id_textBox1.Size = new Size(81, 30);
+            search_id_textBox1.TabIndex = 8;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(12, 75);
+            label11.Name = "label11";
+            label11.Size = new Size(76, 23);
+            label11.TabIndex = 7;
+            label11.Text = "Apellido:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(12, 26);
+            label10.Name = "label10";
+            label10.Size = new Size(29, 23);
+            label10.TabIndex = 6;
+            label10.Text = "Id:";
             // 
             // dataGridView1
             // 
@@ -684,6 +684,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 670);
+            Controls.Add(search_panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
@@ -698,10 +699,10 @@
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            search_panel2.ResumeLayout(false);
-            search_panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
+            search_panel2.ResumeLayout(false);
+            search_panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -767,11 +768,11 @@
         private ToolStripButton search_butt;
         private ToolStripSeparator toolStripSeparator6;
         private Panel search_panel2;
-        private Label label10;
-        private Label label11;
-        private TextBox search_id_textBox1;
-        private TextBox search_lname_textBox2;
-        private Button search_id_button1;
         private Button search_lname_button2;
+        private Button search_id_button1;
+        private TextBox search_lname_textBox2;
+        private TextBox search_id_textBox1;
+        private Label label11;
+        private Label label10;
     }
 }

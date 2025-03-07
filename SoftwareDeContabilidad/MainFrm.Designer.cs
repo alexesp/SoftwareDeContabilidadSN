@@ -323,6 +323,7 @@
             treeView1.SelectedImageIndex = 0;
             treeView1.Size = new Size(380, 454);
             treeView1.TabIndex = 0;
+            treeView1.DoubleClick += treeView1_DoubleClick;
             // 
             // imageList1
             // 
@@ -353,6 +354,7 @@
             Controls.Add(bott_panel2);
             Controls.Add(top_panel1);
             FormBorderStyle = FormBorderStyle.None;
+            IsMdiContainer = true;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "MainFrm";

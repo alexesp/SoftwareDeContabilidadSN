@@ -144,11 +144,20 @@ namespace SoftwareDeContabilidad.Contabilidad
             }
         }
 
-        private void search_id_button1_Click(object sender, EventArgs e)
+
+
+        private void search_id_button1_Click_1(object sender, EventArgs e)
         {
             Int32 id;
             Int32.TryParse(this.search_id_textBox1.Text, out id);
-            this.customersTableAdapter1.FillBy_id(this.accDataSet1.Customers);
+            this.customersTableAdapter1.FillBy_id(this.accDataSet1.Customers, id);
+        }
+
+        private void search_lname_button2_Click(object sender, EventArgs e)
+        {
+            string search_by;
+            search_by = "%" + this.search_lname_textBox2.Text + "%";
+            this.customersTableAdapter1.FillBy_last_name(this.accDataSet1.Customers, search_by);
         }
     }
 }
