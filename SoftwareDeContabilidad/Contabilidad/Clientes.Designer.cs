@@ -42,6 +42,9 @@
             cancel_butt = new ToolStripButton();
             toolStripSeparator5 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
+            bindingSource1 = new BindingSource(components);
+            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
             comment_textBox9 = new TextBox();
             label9 = new Label();
             direc_textBox8 = new TextBox();
@@ -52,7 +55,6 @@
             label6 = new Label();
             telefono_textBox5 = new TextBox();
             label5 = new Label();
-            genero_textBox4 = new TextBox();
             label4 = new Label();
             second_name_textBox3 = new TextBox();
             label3 = new Label();
@@ -61,6 +63,18 @@
             id_textBox1 = new TextBox();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            landLineDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cellNumDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regUserDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regTimeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             reg_time_label14 = new Label();
             reg_time_label15 = new Label();
@@ -68,14 +82,13 @@
             reg_date_label13 = new Label();
             reg_user_label11 = new Label();
             reg_user_label10 = new Label();
-            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
-            bindingSource1 = new BindingSource(components);
+            customersTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.CustomersTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -98,6 +111,7 @@
             new_butt.Size = new Size(90, 51);
             new_butt.Text = "Nuevo";
             new_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            new_butt.Click += new_butt_Click;
             // 
             // toolStripSeparator1
             // 
@@ -114,6 +128,7 @@
             edit_butt.Size = new Size(90, 51);
             edit_butt.Text = "Editar";
             edit_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            edit_butt.Click += edit_butt_Click;
             // 
             // toolStripSeparator2
             // 
@@ -130,6 +145,7 @@
             del_butt.Size = new Size(90, 51);
             del_butt.Text = "Eliminar";
             del_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            del_butt.Click += del_butt_Click;
             // 
             // toolStripSeparator3
             // 
@@ -147,6 +163,7 @@
             save_butt.Size = new Size(90, 51);
             save_butt.Text = "Guardar";
             save_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            save_butt.Click += save_butt_Click;
             // 
             // toolStripSeparator4
             // 
@@ -164,6 +181,7 @@
             cancel_butt.Size = new Size(90, 51);
             cancel_butt.Text = "Cancelar";
             cancel_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            cancel_butt.Click += cancel_butt_Click;
             // 
             // toolStripSeparator5
             // 
@@ -173,6 +191,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Silver;
+            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(comment_textBox9);
             groupBox1.Controls.Add(label9);
             groupBox1.Controls.Add(direc_textBox8);
@@ -183,7 +202,6 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(telefono_textBox5);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(genero_textBox4);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(second_name_textBox3);
             groupBox1.Controls.Add(label3);
@@ -198,8 +216,30 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
             // 
+            // comboBox1
+            // 
+            comboBox1.DataBindings.Add(new Binding("Text", bindingSource1, "Gender", true));
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Hombre", "Mujer" });
+            comboBox1.Location = new Point(194, 147);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(316, 31);
+            comboBox1.TabIndex = 18;
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataMember = "Customers";
+            bindingSource1.DataSource = accDataSet1;
+            // 
+            // accDataSet1
+            // 
+            accDataSet1.DataSetName = "AccDataSet";
+            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comment_textBox9
             // 
+            comment_textBox9.DataBindings.Add(new Binding("Text", bindingSource1, "Comment", true));
             comment_textBox9.Location = new Point(194, 323);
             comment_textBox9.Name = "comment_textBox9";
             comment_textBox9.ReadOnly = true;
@@ -217,6 +257,7 @@
             // 
             // direc_textBox8
             // 
+            direc_textBox8.DataBindings.Add(new Binding("Text", bindingSource1, "Address", true));
             direc_textBox8.Location = new Point(194, 287);
             direc_textBox8.Name = "direc_textBox8";
             direc_textBox8.ReadOnly = true;
@@ -234,6 +275,7 @@
             // 
             // email_textBox7
             // 
+            email_textBox7.DataBindings.Add(new Binding("Text", bindingSource1, "Email", true));
             email_textBox7.Location = new Point(194, 251);
             email_textBox7.Name = "email_textBox7";
             email_textBox7.ReadOnly = true;
@@ -251,6 +293,7 @@
             // 
             // mobil_textBox6
             // 
+            mobil_textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "CellNum", true));
             mobil_textBox6.Location = new Point(194, 215);
             mobil_textBox6.Name = "mobil_textBox6";
             mobil_textBox6.ReadOnly = true;
@@ -268,6 +311,7 @@
             // 
             // telefono_textBox5
             // 
+            telefono_textBox5.DataBindings.Add(new Binding("Text", bindingSource1, "LandLine", true));
             telefono_textBox5.Location = new Point(194, 182);
             telefono_textBox5.Name = "telefono_textBox5";
             telefono_textBox5.ReadOnly = true;
@@ -283,14 +327,6 @@
             label5.TabIndex = 8;
             label5.Text = "Telefono fijo:";
             // 
-            // genero_textBox4
-            // 
-            genero_textBox4.Location = new Point(194, 146);
-            genero_textBox4.Name = "genero_textBox4";
-            genero_textBox4.ReadOnly = true;
-            genero_textBox4.Size = new Size(316, 30);
-            genero_textBox4.TabIndex = 7;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -302,6 +338,7 @@
             // 
             // second_name_textBox3
             // 
+            second_name_textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "LastName", true));
             second_name_textBox3.Location = new Point(194, 110);
             second_name_textBox3.Name = "second_name_textBox3";
             second_name_textBox3.ReadOnly = true;
@@ -319,6 +356,7 @@
             // 
             // first_name_textBox2
             // 
+            first_name_textBox2.DataBindings.Add(new Binding("Text", bindingSource1, "FirstName", true));
             first_name_textBox2.Location = new Point(194, 74);
             first_name_textBox2.Name = "first_name_textBox2";
             first_name_textBox2.ReadOnly = true;
@@ -336,6 +374,7 @@
             // 
             // id_textBox1
             // 
+            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "ID", true));
             id_textBox1.Location = new Point(194, 38);
             id_textBox1.Name = "id_textBox1";
             id_textBox1.ReadOnly = true;
@@ -353,12 +392,126 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, landLineDataGridViewTextBoxColumn, cellNumDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn, regUserDataGridViewTextBoxColumn, regDateDataGridViewTextBoxColumn, regTimeDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = bindingSource1;
             dataGridView1.Location = new Point(12, 479);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(776, 144);
             dataGridView1.TabIndex = 2;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            firstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            lastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            genderDataGridViewTextBoxColumn.ReadOnly = true;
+            genderDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // landLineDataGridViewTextBoxColumn
+            // 
+            landLineDataGridViewTextBoxColumn.DataPropertyName = "LandLine";
+            landLineDataGridViewTextBoxColumn.HeaderText = "LandLine";
+            landLineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            landLineDataGridViewTextBoxColumn.Name = "landLineDataGridViewTextBoxColumn";
+            landLineDataGridViewTextBoxColumn.ReadOnly = true;
+            landLineDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cellNumDataGridViewTextBoxColumn
+            // 
+            cellNumDataGridViewTextBoxColumn.DataPropertyName = "CellNum";
+            cellNumDataGridViewTextBoxColumn.HeaderText = "CellNum";
+            cellNumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            cellNumDataGridViewTextBoxColumn.Name = "cellNumDataGridViewTextBoxColumn";
+            cellNumDataGridViewTextBoxColumn.ReadOnly = true;
+            cellNumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ReadOnly = true;
+            emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            addressDataGridViewTextBoxColumn.ReadOnly = true;
+            addressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            commentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            commentDataGridViewTextBoxColumn.ReadOnly = true;
+            commentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regUserDataGridViewTextBoxColumn
+            // 
+            regUserDataGridViewTextBoxColumn.DataPropertyName = "RegUser";
+            regUserDataGridViewTextBoxColumn.HeaderText = "RegUser";
+            regUserDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regUserDataGridViewTextBoxColumn.Name = "regUserDataGridViewTextBoxColumn";
+            regUserDataGridViewTextBoxColumn.ReadOnly = true;
+            regUserDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regDateDataGridViewTextBoxColumn
+            // 
+            regDateDataGridViewTextBoxColumn.DataPropertyName = "RegDate";
+            regDateDataGridViewTextBoxColumn.HeaderText = "RegDate";
+            regDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regDateDataGridViewTextBoxColumn.Name = "regDateDataGridViewTextBoxColumn";
+            regDateDataGridViewTextBoxColumn.ReadOnly = true;
+            regDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regTimeDataGridViewTextBoxColumn
+            // 
+            regTimeDataGridViewTextBoxColumn.DataPropertyName = "RegTime";
+            regTimeDataGridViewTextBoxColumn.HeaderText = "RegTime";
+            regTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regTimeDataGridViewTextBoxColumn.Name = "regTimeDataGridViewTextBoxColumn";
+            regTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            regTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // panel1
             // 
@@ -377,6 +530,7 @@
             // 
             // reg_time_label14
             // 
+            reg_time_label14.DataBindings.Add(new Binding("Text", bindingSource1, "RegTime", true));
             reg_time_label14.Location = new Point(686, 8);
             reg_time_label14.Name = "reg_time_label14";
             reg_time_label14.Size = new Size(102, 23);
@@ -394,6 +548,7 @@
             // 
             // reg_date_label12
             // 
+            reg_date_label12.DataBindings.Add(new Binding("Text", bindingSource1, "RegDate", true));
             reg_date_label12.Location = new Point(404, 8);
             reg_date_label12.Name = "reg_date_label12";
             reg_date_label12.Size = new Size(132, 23);
@@ -411,6 +566,7 @@
             // 
             // reg_user_label11
             // 
+            reg_user_label11.DataBindings.Add(new Binding("Text", bindingSource1, "RegUser", true));
             reg_user_label11.Location = new Point(175, 8);
             reg_user_label11.Name = "reg_user_label11";
             reg_user_label11.Size = new Size(83, 23);
@@ -426,11 +582,9 @@
             reg_user_label10.TabIndex = 1;
             reg_user_label10.Text = "Usuario Registrado:";
             // 
-            // accDataSet1
+            // customersTableAdapter1
             // 
-            accDataSet1.DataSetName = "AccDataSet";
-            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
-            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            customersTableAdapter1.ClearBeforeFill = true;
             // 
             // Clientes
             // 
@@ -446,15 +600,16 @@
             Name = "Clientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
+            Load += Clientes_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -479,7 +634,6 @@
         private Label label1;
         private TextBox first_name_textBox2;
         private Label label2;
-        private TextBox genero_textBox4;
         private Label label4;
         private TextBox second_name_textBox3;
         private Label label3;
@@ -501,5 +655,19 @@
         private Label reg_time_label15;
         private DataSet.AccDataSet accDataSet1;
         private BindingSource bindingSource1;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn landLineDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cellNumDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regUserDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regDateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regTimeDataGridViewTextBoxColumn;
+        private ComboBox comboBox1;
+        private DataSet.AccDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
     }
 }
