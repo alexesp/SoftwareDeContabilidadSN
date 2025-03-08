@@ -83,6 +83,10 @@ namespace SoftwareDeContabilidad.Contabilidad
         {
             is_del_butt = false;
             new_edit_del_butts();
+            //-----------------------------
+            this.reg_user_label11.Text = "Login User";
+            this.reg_date_label12.Text = DateTime.Now.ToShortDateString();
+            this.reg_time_label14.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void del_butt_Click(object sender, EventArgs e)

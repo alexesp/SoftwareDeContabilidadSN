@@ -63,7 +63,7 @@
             search_panel2 = new Panel();
             search_lname_button2 = new Button();
             search_id_button1 = new Button();
-            search_lname_textBox2 = new TextBox();
+            search_product_name_textBox2 = new TextBox();
             search_id_textBox1 = new TextBox();
             label11 = new Label();
             label10 = new Label();
@@ -112,6 +112,7 @@
             new_butt.Size = new Size(90, 51);
             new_butt.Text = "Nuevo";
             new_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            new_butt.Click += new_butt_Click;
             // 
             // toolStripSeparator1
             // 
@@ -128,6 +129,7 @@
             edit_butt.Size = new Size(90, 51);
             edit_butt.Text = "Editar";
             edit_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            edit_butt.Click += edit_butt_Click;
             // 
             // toolStripSeparator2
             // 
@@ -144,6 +146,7 @@
             del_butt.Size = new Size(90, 51);
             del_butt.Text = "Eliminar";
             del_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            del_butt.Click += del_butt_Click;
             // 
             // toolStripSeparator3
             // 
@@ -161,6 +164,7 @@
             save_butt.Size = new Size(90, 51);
             save_butt.Text = "Guardar";
             save_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            save_butt.Click += save_butt_Click;
             // 
             // toolStripSeparator4
             // 
@@ -178,6 +182,7 @@
             cancel_butt.Size = new Size(90, 51);
             cancel_butt.Text = "Cancelar";
             cancel_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            cancel_butt.Click += cancel_butt_Click;
             // 
             // toolStripSeparator5
             // 
@@ -195,6 +200,7 @@
             search_butt.Size = new Size(90, 51);
             search_butt.Text = "Buscar";
             search_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            search_butt.Click += search_butt_Click;
             // 
             // toolStripSeparator6
             // 
@@ -360,7 +366,7 @@
             // 
             search_panel2.Controls.Add(search_lname_button2);
             search_panel2.Controls.Add(search_id_button1);
-            search_panel2.Controls.Add(search_lname_textBox2);
+            search_panel2.Controls.Add(search_product_name_textBox2);
             search_panel2.Controls.Add(search_id_textBox1);
             search_panel2.Controls.Add(label11);
             search_panel2.Controls.Add(label10);
@@ -380,6 +386,7 @@
             search_lname_button2.Text = "Buscar";
             search_lname_button2.TextAlign = ContentAlignment.MiddleLeft;
             search_lname_button2.UseVisualStyleBackColor = true;
+            search_lname_button2.Click += search_lname_button2_Click;
             // 
             // search_id_button1
             // 
@@ -391,13 +398,14 @@
             search_id_button1.Text = "Buscar";
             search_id_button1.TextAlign = ContentAlignment.MiddleLeft;
             search_id_button1.UseVisualStyleBackColor = true;
+            search_id_button1.Click += search_id_button1_Click;
             // 
-            // search_lname_textBox2
+            // search_product_name_textBox2
             // 
-            search_lname_textBox2.Location = new Point(85, 73);
-            search_lname_textBox2.Name = "search_lname_textBox2";
-            search_lname_textBox2.Size = new Size(81, 30);
-            search_lname_textBox2.TabIndex = 9;
+            search_product_name_textBox2.Location = new Point(85, 73);
+            search_product_name_textBox2.Name = "search_product_name_textBox2";
+            search_product_name_textBox2.Size = new Size(81, 30);
+            search_product_name_textBox2.TabIndex = 9;
             // 
             // search_id_textBox1
             // 
@@ -409,16 +417,16 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(12, 75);
+            label11.Location = new Point(3, 76);
             label11.Name = "label11";
-            label11.Size = new Size(76, 23);
+            label11.Size = new Size(84, 23);
             label11.TabIndex = 7;
-            label11.Text = "Apellido:";
+            label11.Text = "Producto:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(12, 26);
+            label10.Location = new Point(3, 26);
             label10.Name = "label10";
             label10.Size = new Size(29, 23);
             label10.TabIndex = 6;
@@ -517,16 +525,16 @@
             // productIdDataGridViewTextBoxColumn
             // 
             productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            productIdDataGridViewTextBoxColumn.HeaderText = "ProductId";
+            productIdDataGridViewTextBoxColumn.HeaderText = "Id";
             productIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
             productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            productIdDataGridViewTextBoxColumn.Width = 125;
+            productIdDataGridViewTextBoxColumn.Width = 60;
             // 
             // productNameDataGridViewTextBoxColumn
             // 
             productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            productNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto";
             productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
             productNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -535,7 +543,7 @@
             // initialQtyDataGridViewTextBoxColumn
             // 
             initialQtyDataGridViewTextBoxColumn.DataPropertyName = "InitialQty";
-            initialQtyDataGridViewTextBoxColumn.HeaderText = "InitialQty";
+            initialQtyDataGridViewTextBoxColumn.HeaderText = "Cantidat Inicial";
             initialQtyDataGridViewTextBoxColumn.MinimumWidth = 6;
             initialQtyDataGridViewTextBoxColumn.Name = "initialQtyDataGridViewTextBoxColumn";
             initialQtyDataGridViewTextBoxColumn.ReadOnly = true;
@@ -544,7 +552,7 @@
             // unitDataGridViewTextBoxColumn
             // 
             unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            unitDataGridViewTextBoxColumn.HeaderText = "Unidad";
             unitDataGridViewTextBoxColumn.MinimumWidth = 6;
             unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
             unitDataGridViewTextBoxColumn.ReadOnly = true;
@@ -553,7 +561,7 @@
             // priceDataGridViewTextBoxColumn
             // 
             priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            priceDataGridViewTextBoxColumn.HeaderText = "Precio";
             priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             priceDataGridViewTextBoxColumn.ReadOnly = true;
@@ -562,7 +570,7 @@
             // discountDataGridViewTextBoxColumn
             // 
             discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            discountDataGridViewTextBoxColumn.HeaderText = "Discount";
+            discountDataGridViewTextBoxColumn.HeaderText = "Descuento";
             discountDataGridViewTextBoxColumn.MinimumWidth = 6;
             discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
             discountDataGridViewTextBoxColumn.ReadOnly = true;
@@ -571,7 +579,7 @@
             // commentDataGridViewTextBoxColumn
             // 
             commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comentario";
             commentDataGridViewTextBoxColumn.MinimumWidth = 6;
             commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             commentDataGridViewTextBoxColumn.ReadOnly = true;
@@ -593,6 +601,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Productos";
+            Load += Productos_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -640,7 +649,7 @@
         private Panel search_panel2;
         private Button search_lname_button2;
         private Button search_id_button1;
-        private TextBox search_lname_textBox2;
+        private TextBox search_product_name_textBox2;
         private TextBox search_id_textBox1;
         private Label label11;
         private Label label10;

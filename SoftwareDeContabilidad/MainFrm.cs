@@ -92,6 +92,14 @@ namespace SoftwareDeContabilidad
                 frm.MdiParent = this;
                 frm.Show();
             }
+
+            //-----------------------------------------------------
+            if (this.treeView1.SelectedNode.Name == "Products")
+            {
+                SoftwareDeContabilidad.Contabilidad.Productos frm = new Productos();
+                frm.MdiParent = this;
+                frm.Show();
+            }
         }
     }
 }

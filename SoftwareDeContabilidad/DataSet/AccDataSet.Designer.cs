@@ -4170,12 +4170,38 @@ SELECT ProductId, ProductName, InitialQty, Unit, Price, Discount, Comment, RegUs
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ProductId, ProductName, InitialQty, Unit, Price, Discount, Comment, RegUse" +
                 "r, RegDate, RegTime\r\nFROM   Products\r\nORDER BY ProductId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ProductId, Price, Discount, Comment, RegUser, RegDate, RegTime, InitialQty" +
+                ", Unit, ProductName\r\nFROM   Products\r\nWHERE (ProductId = @search_id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@search_id";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "ProductId";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT ProductId, ProductName, InitialQty, Unit, Price, Discount, Comment, RegUse" +
+                "r, RegDate, RegTime\r\nFROM   Products\r\nWHERE (ProductName LIKE @pro_name)\r\nORDER " +
+                "BY ProductId";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@pro_name";
+            param.SqlDbType = global::System.Data.SqlDbType.NVarChar;
+            param.Size = 90;
+            param.IsNullable = true;
+            param.SourceColumn = "ProductName";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4184,6 +4210,39 @@ SELECT ProductId, ProductName, InitialQty, Unit, Price, Discount, Comment, RegUs
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
         public virtual int Fill_All(AccDataSet.ProductsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_Id(AccDataSet.ProductsDataTable dataTable, int search_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(search_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_product_name(AccDataSet.ProductsDataTable dataTable, string pro_name) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((pro_name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pro_name));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
