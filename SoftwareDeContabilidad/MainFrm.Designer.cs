@@ -42,7 +42,7 @@
             TreeNode treeNode10 = new TreeNode("Todas las herramientas", new TreeNode[] { treeNode1, treeNode2, treeNode5, treeNode8, treeNode9 });
             top_panel1 = new Panel();
             button2 = new Button();
-            button1 = new Button();
+            tools_button1 = new Button();
             info_button2 = new Button();
             cont_button1 = new Button();
             close_button1 = new Button();
@@ -60,10 +60,13 @@
             expand_button3 = new Button();
             treeView1 = new TreeView();
             imageList1 = new ImageList(components);
+            tools_cm = new ContextMenuStrip(components);
+            settings_MenuItem = new ToolStripMenuItem();
             top_panel1.SuspendLayout();
             bott_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            tools_cm.SuspendLayout();
             SuspendLayout();
             // 
             // top_panel1
@@ -71,7 +74,7 @@
             top_panel1.BackgroundImage = Properties.Resources.butt_background;
             top_panel1.BackgroundImageLayout = ImageLayout.Stretch;
             top_panel1.Controls.Add(button2);
-            top_panel1.Controls.Add(button1);
+            top_panel1.Controls.Add(tools_button1);
             top_panel1.Controls.Add(info_button2);
             top_panel1.Controls.Add(cont_button1);
             top_panel1.Controls.Add(close_button1);
@@ -96,19 +99,20 @@
             button2.TextImageRelation = TextImageRelation.ImageAboveText;
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // tools_button1
             // 
-            button1.BackgroundImage = Properties.Resources.butt_background;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Image = Properties.Resources.top_Tools_butt;
-            button1.Location = new Point(336, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(162, 70);
-            button1.TabIndex = 4;
-            button1.Text = "Herramientas F4";
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
-            button1.UseVisualStyleBackColor = true;
+            tools_button1.BackgroundImage = Properties.Resources.butt_background;
+            tools_button1.BackgroundImageLayout = ImageLayout.Stretch;
+            tools_button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tools_button1.Image = Properties.Resources.top_Tools_butt;
+            tools_button1.Location = new Point(336, 8);
+            tools_button1.Name = "tools_button1";
+            tools_button1.Size = new Size(162, 70);
+            tools_button1.TabIndex = 4;
+            tools_button1.Text = "Herramientas F4";
+            tools_button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            tools_button1.UseVisualStyleBackColor = true;
+            tools_button1.Click += tools_button1_Click;
             // 
             // info_button2
             // 
@@ -349,6 +353,21 @@
             imageList1.Images.SetKeyName(11, "tree_spend.png");
             imageList1.Images.SetKeyName(12, "collapse.png");
             // 
+            // tools_cm
+            // 
+            tools_cm.ImageScalingSize = new Size(20, 20);
+            tools_cm.Items.AddRange(new ToolStripItem[] { settings_MenuItem });
+            tools_cm.Name = "contextMenuStrip1";
+            tools_cm.Size = new Size(211, 72);
+            // 
+            // settings_MenuItem
+            // 
+            settings_MenuItem.AutoSize = false;
+            settings_MenuItem.Name = "settings_MenuItem";
+            settings_MenuItem.Size = new Size(180, 40);
+            settings_MenuItem.Text = "Configuracion";
+            settings_MenuItem.Click += settings_MenuItem_Click;
+            // 
             // MainFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -372,6 +391,7 @@
             bott_panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)user_pictureBox1).EndInit();
             panel1.ResumeLayout(false);
+            tools_cm.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -383,7 +403,7 @@
         private Button close_button1;
         private Button cont_button1;
         private Button info_button2;
-        private Button button1;
+        private Button tools_button1;
         private Button button2;
         private ComboBox background_comboBox1;
         private Label label1;
@@ -397,5 +417,7 @@
         private ImageList imageList1;
         private Button expand_button3;
         private Button colaps_button3;
+        private ContextMenuStrip tools_cm;
+        private ToolStripMenuItem settings_MenuItem;
     }
 }

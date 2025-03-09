@@ -86,7 +86,7 @@ namespace SoftwareDeContabilidad
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
-            if(this.treeView1.SelectedNode.Name == "Clientes")
+            if (this.treeView1.SelectedNode.Name == "Clientes")
             {
                 SoftwareDeContabilidad.Contabilidad.Clientes frm = new Clientes();
                 frm.MdiParent = this;
@@ -100,6 +100,23 @@ namespace SoftwareDeContabilidad
                 frm.MdiParent = this;
                 frm.Show();
             }
+        }
+
+        private void tools_button1_Click(object sender, EventArgs e)
+        {
+            Point p;
+            p = new Point(this.tools_button1.Left, this.top_panel1.Height);
+            //----------------------------------------------------------------
+            this.tools_cm.Show(p);
+        }
+
+        private void settings_MenuItem_Click(object sender, EventArgs e)
+        {
+            
+                SoftwareDeContabilidad.Contabilidad.SettingsFrm frm = new SettingsFrm();
+                frm.MdiParent = this;
+                frm.Show();
+            
         }
     }
 }
