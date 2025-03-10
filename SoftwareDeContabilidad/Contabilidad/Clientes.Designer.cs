@@ -72,14 +72,6 @@
             label11 = new Label();
             label10 = new Label();
             dataGridView1 = new DataGridView();
-            panel1 = new Panel();
-            reg_time_label14 = new Label();
-            reg_time_label15 = new Label();
-            reg_date_label12 = new Label();
-            reg_date_label13 = new Label();
-            reg_user_label11 = new Label();
-            reg_user_label10 = new Label();
-            customersTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.CustomersTableAdapter();
             iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -89,6 +81,14 @@
             emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            reg_time_label14 = new Label();
+            reg_time_label15 = new Label();
+            reg_date_label12 = new Label();
+            reg_date_label13 = new Label();
+            reg_user_label11 = new Label();
+            reg_user_label10 = new Label();
+            customersTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.CustomersTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -495,79 +495,6 @@
             dataGridView1.Size = new Size(776, 144);
             dataGridView1.TabIndex = 2;
             // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(reg_time_label14);
-            panel1.Controls.Add(reg_time_label15);
-            panel1.Controls.Add(reg_date_label12);
-            panel1.Controls.Add(reg_date_label13);
-            panel1.Controls.Add(reg_user_label11);
-            panel1.Controls.Add(reg_user_label10);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 629);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 41);
-            panel1.TabIndex = 3;
-            // 
-            // reg_time_label14
-            // 
-            reg_time_label14.DataBindings.Add(new Binding("Text", bindingSource1, "RegTime", true));
-            reg_time_label14.Location = new Point(697, 8);
-            reg_time_label14.Name = "reg_time_label14";
-            reg_time_label14.Size = new Size(91, 23);
-            reg_time_label14.TabIndex = 6;
-            reg_time_label14.Text = "-";
-            // 
-            // reg_time_label15
-            // 
-            reg_time_label15.AutoSize = true;
-            reg_time_label15.Location = new Point(562, 8);
-            reg_time_label15.Name = "reg_time_label15";
-            reg_time_label15.Size = new Size(138, 23);
-            reg_time_label15.TabIndex = 5;
-            reg_time_label15.Text = "Hora de registro:";
-            // 
-            // reg_date_label12
-            // 
-            reg_date_label12.DataBindings.Add(new Binding("Text", bindingSource1, "RegDate", true));
-            reg_date_label12.Location = new Point(445, 8);
-            reg_date_label12.Name = "reg_date_label12";
-            reg_date_label12.Size = new Size(102, 23);
-            reg_date_label12.TabIndex = 4;
-            reg_date_label12.Text = "-";
-            // 
-            // reg_date_label13
-            // 
-            reg_date_label13.AutoSize = true;
-            reg_date_label13.Location = new Point(300, 8);
-            reg_date_label13.Name = "reg_date_label13";
-            reg_date_label13.Size = new Size(145, 23);
-            reg_date_label13.TabIndex = 3;
-            reg_date_label13.Text = "Fecha de registro:";
-            // 
-            // reg_user_label11
-            // 
-            reg_user_label11.DataBindings.Add(new Binding("Text", bindingSource1, "RegUser", true));
-            reg_user_label11.Location = new Point(175, 8);
-            reg_user_label11.Name = "reg_user_label11";
-            reg_user_label11.Size = new Size(127, 23);
-            reg_user_label11.TabIndex = 2;
-            reg_user_label11.Text = "-";
-            // 
-            // reg_user_label10
-            // 
-            reg_user_label10.AutoSize = true;
-            reg_user_label10.Location = new Point(11, 8);
-            reg_user_label10.Name = "reg_user_label10";
-            reg_user_label10.Size = new Size(158, 23);
-            reg_user_label10.TabIndex = 1;
-            reg_user_label10.Text = "Usuario Registrado:";
-            // 
-            // customersTableAdapter1
-            // 
-            customersTableAdapter1.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -648,6 +575,79 @@
             commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             commentDataGridViewTextBoxColumn.ReadOnly = true;
             commentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(reg_time_label14);
+            panel1.Controls.Add(reg_time_label15);
+            panel1.Controls.Add(reg_date_label12);
+            panel1.Controls.Add(reg_date_label13);
+            panel1.Controls.Add(reg_user_label11);
+            panel1.Controls.Add(reg_user_label10);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 629);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 41);
+            panel1.TabIndex = 3;
+            // 
+            // reg_time_label14
+            // 
+            reg_time_label14.DataBindings.Add(new Binding("Text", bindingSource1, "RegTime", true));
+            reg_time_label14.Location = new Point(697, 8);
+            reg_time_label14.Name = "reg_time_label14";
+            reg_time_label14.Size = new Size(91, 23);
+            reg_time_label14.TabIndex = 6;
+            reg_time_label14.Text = "-";
+            // 
+            // reg_time_label15
+            // 
+            reg_time_label15.AutoSize = true;
+            reg_time_label15.Location = new Point(562, 8);
+            reg_time_label15.Name = "reg_time_label15";
+            reg_time_label15.Size = new Size(138, 23);
+            reg_time_label15.TabIndex = 5;
+            reg_time_label15.Text = "Hora de registro:";
+            // 
+            // reg_date_label12
+            // 
+            reg_date_label12.DataBindings.Add(new Binding("Text", bindingSource1, "RegDate", true));
+            reg_date_label12.Location = new Point(445, 8);
+            reg_date_label12.Name = "reg_date_label12";
+            reg_date_label12.Size = new Size(102, 23);
+            reg_date_label12.TabIndex = 4;
+            reg_date_label12.Text = "-";
+            // 
+            // reg_date_label13
+            // 
+            reg_date_label13.AutoSize = true;
+            reg_date_label13.Location = new Point(300, 8);
+            reg_date_label13.Name = "reg_date_label13";
+            reg_date_label13.Size = new Size(145, 23);
+            reg_date_label13.TabIndex = 3;
+            reg_date_label13.Text = "Fecha de registro:";
+            // 
+            // reg_user_label11
+            // 
+            reg_user_label11.DataBindings.Add(new Binding("Text", bindingSource1, "RegUser", true));
+            reg_user_label11.Location = new Point(175, 8);
+            reg_user_label11.Name = "reg_user_label11";
+            reg_user_label11.Size = new Size(127, 23);
+            reg_user_label11.TabIndex = 2;
+            reg_user_label11.Text = "-";
+            // 
+            // reg_user_label10
+            // 
+            reg_user_label10.AutoSize = true;
+            reg_user_label10.Location = new Point(11, 8);
+            reg_user_label10.Name = "reg_user_label10";
+            reg_user_label10.Size = new Size(158, 23);
+            reg_user_label10.TabIndex = 1;
+            reg_user_label10.Text = "Usuario Registrado:";
+            // 
+            // customersTableAdapter1
+            // 
+            customersTableAdapter1.ClearBeforeFill = true;
             // 
             // Clientes
             // 

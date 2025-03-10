@@ -68,6 +68,13 @@
             label11 = new Label();
             label10 = new Label();
             dataGridView1 = new DataGridView();
+            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            productNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            initialQtyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            unitDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            discountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             reg_time_label14 = new Label();
             reg_time_label15 = new Label();
@@ -76,13 +83,6 @@
             reg_user_label11 = new Label();
             reg_user_label10 = new Label();
             productsTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.ProductsTableAdapter();
-            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            initialQtyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            unitDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            discountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -449,6 +449,69 @@
             dataGridView1.Size = new Size(776, 250);
             dataGridView1.TabIndex = 6;
             // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            productIdDataGridViewTextBoxColumn.HeaderText = "Id";
+            productIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            productIdDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            productNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto";
+            productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            productNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // initialQtyDataGridViewTextBoxColumn
+            // 
+            initialQtyDataGridViewTextBoxColumn.DataPropertyName = "InitialQty";
+            initialQtyDataGridViewTextBoxColumn.HeaderText = "Cantidat Inicial";
+            initialQtyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            initialQtyDataGridViewTextBoxColumn.Name = "initialQtyDataGridViewTextBoxColumn";
+            initialQtyDataGridViewTextBoxColumn.ReadOnly = true;
+            initialQtyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            unitDataGridViewTextBoxColumn.HeaderText = "Unidad";
+            unitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            unitDataGridViewTextBoxColumn.ReadOnly = true;
+            unitDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            priceDataGridViewTextBoxColumn.HeaderText = "Precio";
+            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            priceDataGridViewTextBoxColumn.ReadOnly = true;
+            priceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            discountDataGridViewTextBoxColumn.HeaderText = "Descuento";
+            discountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            discountDataGridViewTextBoxColumn.ReadOnly = true;
+            discountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            commentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            commentDataGridViewTextBoxColumn.ReadOnly = true;
+            commentDataGridViewTextBoxColumn.Width = 125;
+            // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
@@ -521,69 +584,6 @@
             // productsTableAdapter1
             // 
             productsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            productIdDataGridViewTextBoxColumn.HeaderText = "Id";
-            productIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            productIdDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            productNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto";
-            productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            productNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // initialQtyDataGridViewTextBoxColumn
-            // 
-            initialQtyDataGridViewTextBoxColumn.DataPropertyName = "InitialQty";
-            initialQtyDataGridViewTextBoxColumn.HeaderText = "Cantidat Inicial";
-            initialQtyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            initialQtyDataGridViewTextBoxColumn.Name = "initialQtyDataGridViewTextBoxColumn";
-            initialQtyDataGridViewTextBoxColumn.ReadOnly = true;
-            initialQtyDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            unitDataGridViewTextBoxColumn.HeaderText = "Unidad";
-            unitDataGridViewTextBoxColumn.MinimumWidth = 6;
-            unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            unitDataGridViewTextBoxColumn.ReadOnly = true;
-            unitDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Precio";
-            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            priceDataGridViewTextBoxColumn.ReadOnly = true;
-            priceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // discountDataGridViewTextBoxColumn
-            // 
-            discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            discountDataGridViewTextBoxColumn.HeaderText = "Descuento";
-            discountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            discountDataGridViewTextBoxColumn.ReadOnly = true;
-            discountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            commentDataGridViewTextBoxColumn.HeaderText = "Comentario";
-            commentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            commentDataGridViewTextBoxColumn.ReadOnly = true;
-            commentDataGridViewTextBoxColumn.Width = 125;
             // 
             // Productos
             // 
