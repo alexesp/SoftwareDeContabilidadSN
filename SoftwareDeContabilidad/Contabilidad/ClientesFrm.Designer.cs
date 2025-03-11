@@ -1,6 +1,6 @@
 ﻿namespace SoftwareDeContabilidad.Contabilidad
 {
-    partial class Productos
+    partial class ClientesFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesFrm));
             toolStrip1 = new ToolStrip();
             new_butt = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -44,36 +44,42 @@
             search_butt = new ToolStripButton();
             toolStripSeparator6 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
-            unit_textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
             bindingSource1 = new BindingSource(components);
             accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
-            comment_textBox7 = new TextBox();
+            comment_textBox9 = new TextBox();
+            label9 = new Label();
+            direc_textBox8 = new TextBox();
+            label8 = new Label();
+            email_textBox7 = new TextBox();
             label7 = new Label();
-            discount_textBox6 = new TextBox();
+            mobil_textBox6 = new TextBox();
             label6 = new Label();
-            price_textBox5 = new TextBox();
+            telefono_textBox5 = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            ini_qty_textBox3 = new TextBox();
+            second_name_textBox3 = new TextBox();
             label3 = new Label();
-            product_name_textBox2 = new TextBox();
+            first_name_textBox2 = new TextBox();
             label2 = new Label();
             id_textBox1 = new TextBox();
             label1 = new Label();
             search_panel2 = new Panel();
             search_lname_button2 = new Button();
             search_id_button1 = new Button();
-            search_product_name_textBox2 = new TextBox();
+            search_lname_textBox2 = new TextBox();
             search_id_textBox1 = new TextBox();
             label11 = new Label();
             label10 = new Label();
             dataGridView1 = new DataGridView();
-            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            productNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            initialQtyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            unitDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            priceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            discountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            landLineDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cellNumDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            addressDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             reg_time_label14 = new Label();
@@ -82,7 +88,7 @@
             reg_date_label13 = new Label();
             reg_user_label11 = new Label();
             reg_user_label10 = new Label();
-            productsTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.ProductsTableAdapter();
+            customersTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.CustomersTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
@@ -99,7 +105,7 @@
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 54);
-            toolStrip1.TabIndex = 1;
+            toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
             // new_butt
@@ -210,38 +216,44 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Silver;
-            groupBox1.Controls.Add(unit_textBox1);
-            groupBox1.Controls.Add(comment_textBox7);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(comment_textBox9);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(direc_textBox8);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(email_textBox7);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(discount_textBox6);
+            groupBox1.Controls.Add(mobil_textBox6);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(price_textBox5);
+            groupBox1.Controls.Add(telefono_textBox5);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(ini_qty_textBox3);
+            groupBox1.Controls.Add(second_name_textBox3);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(product_name_textBox2);
+            groupBox1.Controls.Add(first_name_textBox2);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(id_textBox1);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 74);
+            groupBox1.Location = new Point(12, 59);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(776, 404);
-            groupBox1.TabIndex = 2;
+            groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
             // 
-            // unit_textBox1
+            // comboBox1
             // 
-            unit_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "Unit", true));
-            unit_textBox1.Location = new Point(194, 146);
-            unit_textBox1.Name = "unit_textBox1";
-            unit_textBox1.Size = new Size(316, 30);
-            unit_textBox1.TabIndex = 18;
+            comboBox1.DataBindings.Add(new Binding("Text", bindingSource1, "Gender", true));
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Items.AddRange(new object[] { "Hombre", "Mujer" });
+            comboBox1.Location = new Point(194, 147);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(316, 31);
+            comboBox1.TabIndex = 18;
             // 
             // bindingSource1
             // 
-            bindingSource1.DataMember = "Products";
+            bindingSource1.DataMember = "Customers";
             bindingSource1.DataSource = accDataSet1;
             // 
             // accDataSet1
@@ -250,103 +262,137 @@
             accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
             accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // comment_textBox7
+            // comment_textBox9
             // 
-            comment_textBox7.DataBindings.Add(new Binding("Text", bindingSource1, "Comment", true));
-            comment_textBox7.Location = new Point(194, 251);
-            comment_textBox7.Name = "comment_textBox7";
-            comment_textBox7.Size = new Size(316, 30);
-            comment_textBox7.TabIndex = 13;
+            comment_textBox9.DataBindings.Add(new Binding("Text", bindingSource1, "Comment", true));
+            comment_textBox9.Location = new Point(194, 323);
+            comment_textBox9.Name = "comment_textBox9";
+            comment_textBox9.Size = new Size(557, 30);
+            comment_textBox9.TabIndex = 17;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(90, 330);
+            label9.Name = "label9";
+            label9.Size = new Size(104, 23);
+            label9.TabIndex = 16;
+            label9.Text = "Comentario:";
+            // 
+            // direc_textBox8
+            // 
+            direc_textBox8.DataBindings.Add(new Binding("Text", bindingSource1, "Address", true));
+            direc_textBox8.Location = new Point(194, 287);
+            direc_textBox8.Name = "direc_textBox8";
+            direc_textBox8.Size = new Size(557, 30);
+            direc_textBox8.TabIndex = 15;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(86, 294);
+            label8.Name = "label8";
+            label8.Size = new Size(85, 23);
+            label8.TabIndex = 14;
+            label8.Text = "Direccion:";
+            // 
+            // email_textBox7
+            // 
+            email_textBox7.DataBindings.Add(new Binding("Text", bindingSource1, "Email", true));
+            email_textBox7.Location = new Point(194, 251);
+            email_textBox7.Name = "email_textBox7";
+            email_textBox7.Size = new Size(316, 30);
+            email_textBox7.TabIndex = 13;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(16, 258);
+            label7.Location = new Point(86, 258);
             label7.Name = "label7";
-            label7.Size = new Size(104, 23);
+            label7.Size = new Size(55, 23);
             label7.TabIndex = 12;
-            label7.Text = "Comentario:";
+            label7.Text = "Email:";
             // 
-            // discount_textBox6
+            // mobil_textBox6
             // 
-            discount_textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "Discount", true));
-            discount_textBox6.Location = new Point(194, 215);
-            discount_textBox6.Name = "discount_textBox6";
-            discount_textBox6.Size = new Size(316, 30);
-            discount_textBox6.TabIndex = 11;
+            mobil_textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "CellNum", true));
+            mobil_textBox6.Location = new Point(194, 215);
+            mobil_textBox6.Name = "mobil_textBox6";
+            mobil_textBox6.Size = new Size(316, 30);
+            mobil_textBox6.TabIndex = 11;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(16, 222);
+            label6.Location = new Point(86, 222);
             label6.Name = "label6";
-            label6.Size = new Size(95, 23);
+            label6.Size = new Size(78, 23);
             label6.TabIndex = 10;
-            label6.Text = "Descuento:";
+            label6.Text = "Telefono:";
             // 
-            // price_textBox5
+            // telefono_textBox5
             // 
-            price_textBox5.DataBindings.Add(new Binding("Text", bindingSource1, "Price", true));
-            price_textBox5.Location = new Point(194, 182);
-            price_textBox5.Name = "price_textBox5";
-            price_textBox5.Size = new Size(316, 30);
-            price_textBox5.TabIndex = 9;
+            telefono_textBox5.DataBindings.Add(new Binding("Text", bindingSource1, "LandLine", true));
+            telefono_textBox5.Location = new Point(194, 182);
+            telefono_textBox5.Name = "telefono_textBox5";
+            telefono_textBox5.Size = new Size(316, 30);
+            telefono_textBox5.TabIndex = 9;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(16, 189);
+            label5.Location = new Point(86, 189);
             label5.Name = "label5";
-            label5.Size = new Size(61, 23);
+            label5.Size = new Size(106, 23);
             label5.TabIndex = 8;
-            label5.Text = "Precio:";
+            label5.Text = "Telefono fijo:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(16, 153);
+            label4.Location = new Point(86, 153);
             label4.Name = "label4";
-            label4.Size = new Size(69, 23);
+            label4.Size = new Size(70, 23);
             label4.TabIndex = 6;
-            label4.Text = "Unidad:";
+            label4.Text = "Genero:";
             // 
-            // ini_qty_textBox3
+            // second_name_textBox3
             // 
-            ini_qty_textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "InitialQty", true));
-            ini_qty_textBox3.Location = new Point(194, 110);
-            ini_qty_textBox3.Name = "ini_qty_textBox3";
-            ini_qty_textBox3.Size = new Size(316, 30);
-            ini_qty_textBox3.TabIndex = 5;
+            second_name_textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "LastName", true));
+            second_name_textBox3.Location = new Point(194, 110);
+            second_name_textBox3.Name = "second_name_textBox3";
+            second_name_textBox3.Size = new Size(316, 30);
+            second_name_textBox3.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 117);
+            label3.Location = new Point(86, 117);
             label3.Name = "label3";
-            label3.Size = new Size(131, 23);
+            label3.Size = new Size(76, 23);
             label3.TabIndex = 4;
-            label3.Text = "Cantidad inicial:";
+            label3.Text = "Apellido:";
             // 
-            // product_name_textBox2
+            // first_name_textBox2
             // 
-            product_name_textBox2.DataBindings.Add(new Binding("Text", bindingSource1, "ProductName", true));
-            product_name_textBox2.Location = new Point(194, 74);
-            product_name_textBox2.Name = "product_name_textBox2";
-            product_name_textBox2.Size = new Size(316, 30);
-            product_name_textBox2.TabIndex = 3;
+            first_name_textBox2.DataBindings.Add(new Binding("Text", bindingSource1, "FirstName", true));
+            first_name_textBox2.Location = new Point(194, 74);
+            first_name_textBox2.Name = "first_name_textBox2";
+            first_name_textBox2.Size = new Size(316, 30);
+            first_name_textBox2.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 81);
+            label2.Location = new Point(86, 81);
             label2.Name = "label2";
-            label2.Size = new Size(180, 23);
+            label2.Size = new Size(77, 23);
             label2.TabIndex = 2;
-            label2.Text = "Nombre del producto:";
+            label2.Text = "Nombre:";
             // 
             // id_textBox1
             // 
-            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "ProductId", true));
+            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "ID", true));
             id_textBox1.Location = new Point(194, 38);
             id_textBox1.Name = "id_textBox1";
             id_textBox1.ReadOnly = true;
@@ -356,7 +402,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 45);
+            label1.Location = new Point(86, 45);
             label1.Name = "label1";
             label1.Size = new Size(29, 23);
             label1.TabIndex = 0;
@@ -366,14 +412,14 @@
             // 
             search_panel2.Controls.Add(search_lname_button2);
             search_panel2.Controls.Add(search_id_button1);
-            search_panel2.Controls.Add(search_product_name_textBox2);
+            search_panel2.Controls.Add(search_lname_textBox2);
             search_panel2.Controls.Add(search_id_textBox1);
             search_panel2.Controls.Add(label11);
             search_panel2.Controls.Add(label10);
-            search_panel2.Location = new Point(538, 70);
+            search_panel2.Location = new Point(537, 61);
             search_panel2.Name = "search_panel2";
             search_panel2.Size = new Size(250, 125);
-            search_panel2.TabIndex = 5;
+            search_panel2.TabIndex = 4;
             search_panel2.Visible = false;
             // 
             // search_lname_button2
@@ -398,14 +444,14 @@
             search_id_button1.Text = "Buscar";
             search_id_button1.TextAlign = ContentAlignment.MiddleLeft;
             search_id_button1.UseVisualStyleBackColor = true;
-            search_id_button1.Click += search_id_button1_Click;
+            search_id_button1.Click += search_id_button1_Click_1;
             // 
-            // search_product_name_textBox2
+            // search_lname_textBox2
             // 
-            search_product_name_textBox2.Location = new Point(85, 73);
-            search_product_name_textBox2.Name = "search_product_name_textBox2";
-            search_product_name_textBox2.Size = new Size(81, 30);
-            search_product_name_textBox2.TabIndex = 9;
+            search_lname_textBox2.Location = new Point(85, 73);
+            search_lname_textBox2.Name = "search_lname_textBox2";
+            search_lname_textBox2.Size = new Size(81, 30);
+            search_lname_textBox2.TabIndex = 9;
             // 
             // search_id_textBox1
             // 
@@ -417,16 +463,16 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(3, 76);
+            label11.Location = new Point(12, 75);
             label11.Name = "label11";
-            label11.Size = new Size(84, 23);
+            label11.Size = new Size(76, 23);
             label11.TabIndex = 7;
-            label11.Text = "Producto:";
+            label11.Text = "Apellido:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(3, 26);
+            label10.Location = new Point(12, 26);
             label10.Name = "label10";
             label10.Size = new Size(29, 23);
             label10.TabIndex = 6;
@@ -438,75 +484,93 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { productIdDataGridViewTextBoxColumn, productNameDataGridViewTextBoxColumn, initialQtyDataGridViewTextBoxColumn, unitDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn, discountDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, landLineDataGridViewTextBoxColumn, cellNumDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, addressDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn });
             dataGridView1.DataSource = bindingSource1;
-            dataGridView1.Location = new Point(12, 378);
+            dataGridView1.Location = new Point(12, 479);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 40;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(776, 250);
-            dataGridView1.TabIndex = 6;
+            dataGridView1.Size = new Size(776, 144);
+            dataGridView1.TabIndex = 2;
             // 
-            // productIdDataGridViewTextBoxColumn
+            // iDDataGridViewTextBoxColumn
             // 
-            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            productIdDataGridViewTextBoxColumn.HeaderText = "Id";
-            productIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            productIdDataGridViewTextBoxColumn.Width = 60;
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.Width = 50;
             // 
-            // productNameDataGridViewTextBoxColumn
+            // firstNameDataGridViewTextBoxColumn
             // 
-            productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            productNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto";
-            productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            productNameDataGridViewTextBoxColumn.Width = 125;
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            firstNameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // initialQtyDataGridViewTextBoxColumn
+            // lastNameDataGridViewTextBoxColumn
             // 
-            initialQtyDataGridViewTextBoxColumn.DataPropertyName = "InitialQty";
-            initialQtyDataGridViewTextBoxColumn.HeaderText = "Cantidat Inicial";
-            initialQtyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            initialQtyDataGridViewTextBoxColumn.Name = "initialQtyDataGridViewTextBoxColumn";
-            initialQtyDataGridViewTextBoxColumn.ReadOnly = true;
-            initialQtyDataGridViewTextBoxColumn.Width = 125;
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            lastNameDataGridViewTextBoxColumn.Width = 125;
             // 
-            // unitDataGridViewTextBoxColumn
+            // genderDataGridViewTextBoxColumn
             // 
-            unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            unitDataGridViewTextBoxColumn.HeaderText = "Unidad";
-            unitDataGridViewTextBoxColumn.MinimumWidth = 6;
-            unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            unitDataGridViewTextBoxColumn.ReadOnly = true;
-            unitDataGridViewTextBoxColumn.Width = 125;
+            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            genderDataGridViewTextBoxColumn.ReadOnly = true;
+            genderDataGridViewTextBoxColumn.Width = 125;
             // 
-            // priceDataGridViewTextBoxColumn
+            // landLineDataGridViewTextBoxColumn
             // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Precio";
-            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            priceDataGridViewTextBoxColumn.ReadOnly = true;
-            priceDataGridViewTextBoxColumn.Width = 125;
+            landLineDataGridViewTextBoxColumn.DataPropertyName = "LandLine";
+            landLineDataGridViewTextBoxColumn.HeaderText = "LandLine";
+            landLineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            landLineDataGridViewTextBoxColumn.Name = "landLineDataGridViewTextBoxColumn";
+            landLineDataGridViewTextBoxColumn.ReadOnly = true;
+            landLineDataGridViewTextBoxColumn.Width = 125;
             // 
-            // discountDataGridViewTextBoxColumn
+            // cellNumDataGridViewTextBoxColumn
             // 
-            discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
-            discountDataGridViewTextBoxColumn.HeaderText = "Descuento";
-            discountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
-            discountDataGridViewTextBoxColumn.ReadOnly = true;
-            discountDataGridViewTextBoxColumn.Width = 125;
+            cellNumDataGridViewTextBoxColumn.DataPropertyName = "CellNum";
+            cellNumDataGridViewTextBoxColumn.HeaderText = "CellNum";
+            cellNumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            cellNumDataGridViewTextBoxColumn.Name = "cellNumDataGridViewTextBoxColumn";
+            cellNumDataGridViewTextBoxColumn.ReadOnly = true;
+            cellNumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ReadOnly = true;
+            emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            addressDataGridViewTextBoxColumn.ReadOnly = true;
+            addressDataGridViewTextBoxColumn.Width = 125;
             // 
             // commentDataGridViewTextBoxColumn
             // 
             commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            commentDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comment";
             commentDataGridViewTextBoxColumn.MinimumWidth = 6;
             commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             commentDataGridViewTextBoxColumn.ReadOnly = true;
@@ -525,7 +589,7 @@
             panel1.Location = new Point(0, 629);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 41);
-            panel1.TabIndex = 7;
+            panel1.TabIndex = 3;
             // 
             // reg_time_label14
             // 
@@ -581,27 +645,26 @@
             reg_user_label10.TabIndex = 1;
             reg_user_label10.Text = "Usuario Registrado:";
             // 
-            // productsTableAdapter1
+            // customersTableAdapter1
             // 
-            productsTableAdapter1.ClearBeforeFill = true;
+            customersTableAdapter1.ClearBeforeFill = true;
             // 
-            // Productos
+            // Clientes
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 670);
+            Controls.Add(search_panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
-            Controls.Add(search_panel2);
             Controls.Add(groupBox1);
             Controls.Add(toolStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Productos";
-            ShowIcon = false;
+            Name = "Clientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Productos";
-            Load += Productos_Load;
+            Text = "Clientes";
+            Load += Clientes_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -620,6 +683,9 @@
         #endregion
 
         private ToolStrip toolStrip1;
+        private GroupBox groupBox1;
+        private DataGridView dataGridView1;
+        private Panel panel1;
         private ToolStripButton new_butt;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton edit_butt;
@@ -630,47 +696,50 @@
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripButton cancel_butt;
         private ToolStripSeparator toolStripSeparator5;
-        private ToolStripButton search_butt;
-        private ToolStripSeparator toolStripSeparator6;
-        private GroupBox groupBox1;
-        private TextBox comment_textBox7;
-        private Label label7;
-        private TextBox discount_textBox6;
-        private Label label6;
-        private TextBox price_textBox5;
-        private Label label5;
-        private Label label4;
-        private TextBox ini_qty_textBox3;
-        private Label label3;
-        private TextBox product_name_textBox2;
-        private Label label2;
         private TextBox id_textBox1;
         private Label label1;
+        private TextBox first_name_textBox2;
+        private Label label2;
+        private Label label4;
+        private TextBox second_name_textBox3;
+        private Label label3;
+        private TextBox telefono_textBox5;
+        private Label label5;
+        private TextBox mobil_textBox6;
+        private Label label6;
+        private TextBox email_textBox7;
+        private Label label7;
+        private TextBox comment_textBox9;
+        private Label label9;
+        private TextBox direc_textBox8;
+        private Label label8;
+        private Label reg_user_label10;
+        private Label reg_user_label11;
+        private Label reg_date_label12;
+        private Label reg_date_label13;
+        private Label reg_time_label14;
+        private Label reg_time_label15;
+        private DataSet.AccDataSet accDataSet1;
+        private BindingSource bindingSource1;
+        private ComboBox comboBox1;
+        private DataSet.AccDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
+        private ToolStripButton search_butt;
+        private ToolStripSeparator toolStripSeparator6;
         private Panel search_panel2;
         private Button search_lname_button2;
         private Button search_id_button1;
-        private TextBox search_product_name_textBox2;
+        private TextBox search_lname_textBox2;
         private TextBox search_id_textBox1;
         private Label label11;
         private Label label10;
-        private DataGridView dataGridView1;
-        private Panel panel1;
-        private Label reg_time_label14;
-        private Label reg_time_label15;
-        private Label reg_date_label12;
-        private Label reg_date_label13;
-        private Label reg_user_label11;
-        private Label reg_user_label10;
-        private DataSet.AccDataSet accDataSet1;
-        private BindingSource bindingSource1;
-        private DataSet.AccDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
-        private TextBox unit_textBox1;
-        private DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn initialQtyDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn landLineDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cellNumDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
     }
 }

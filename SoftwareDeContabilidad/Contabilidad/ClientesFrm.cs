@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SoftwareDeContabilidad.Contabilidad
 {
-    public partial class Productos : Form
+    public partial class ClientesFrm : Form
     {
-        public Productos()
+        public ClientesFrm()
         {
             InitializeComponent();
         }
@@ -56,6 +56,13 @@ namespace SoftwareDeContabilidad.Contabilidad
             this.groupBox1.Enabled = false;
         }
 
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+            save_cancel_butts();
+            //---------------------------------
+            this.customersTableAdapter1.Fill_All(this.accDataSet1.Customers);
+        }
+
         private void new_butt_Click(object sender, EventArgs e)
         {
             is_del_butt = false;
@@ -69,6 +76,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             this.reg_user_label11.Text = "Login User";
             this.reg_date_label12.Text = DateTime.Now.ToShortDateString();
             this.reg_time_label14.Text = DateTime.Now.ToString("HH:mm:ss");
+
         }
 
         private void edit_butt_Click(object sender, EventArgs e)
@@ -92,11 +100,12 @@ namespace SoftwareDeContabilidad.Contabilidad
 
         private void save_butt_Click(object sender, EventArgs e)
         {
+
             try
             {
                 this.bindingSource1.EndEdit();
                 int rv;
-                rv = this.productsTableAdapter1.Update(this.accDataSet1.Products);
+                rv = this.customersTableAdapter1.Update(this.accDataSet1.Customers);
                 //-----------------------------------------------------------------------
                 if (rv > 0)
                 {
@@ -114,6 +123,7 @@ namespace SoftwareDeContabilidad.Contabilidad
                 MessageBox.Show("Error: " + ex.Message);
             }
 
+
         }
 
         private void cancel_butt_Click(object sender, EventArgs e)
@@ -122,11 +132,12 @@ namespace SoftwareDeContabilidad.Contabilidad
             //-----------------------
 
             this.bindingSource1.CancelEdit();
-            this.accDataSet1.Products.RejectChanges();
+            this.accDataSet1.Customers.RejectChanges();
         }
 
         private void search_butt_Click(object sender, EventArgs e)
         {
+
             if (this.search_panel2.Visible == true)
             {
                 this.search_panel2.Visible = false;
@@ -137,25 +148,20 @@ namespace SoftwareDeContabilidad.Contabilidad
             }
         }
 
-        private void search_id_button1_Click(object sender, EventArgs e)
+
+
+        private void search_id_button1_Click_1(object sender, EventArgs e)
         {
             Int32 id;
             Int32.TryParse(this.search_id_textBox1.Text, out id);
-            this.productsTableAdapter1.FillBy_Id(this.accDataSet1.Products, id);
+            this.customersTableAdapter1.FillBy_id(this.accDataSet1.Customers, id);
         }
 
         private void search_lname_button2_Click(object sender, EventArgs e)
         {
             string search_by;
-            search_by = "%" + this.search_product_name_textBox2.Text + "%";
-            this.productsTableAdapter1.FillBy_product_name(this.accDataSet1.Products, search_by);
-        }
-
-        private void Productos_Load(object sender, EventArgs e)
-        {
-            save_cancel_butts();
-            //---------------------------------
-            this.productsTableAdapter1.Fill_All(this.accDataSet1.Products);
+            search_by = "%" + this.search_lname_textBox2.Text + "%";
+            this.customersTableAdapter1.FillBy_last_name(this.accDataSet1.Customers, search_by);
         }
     }
 }

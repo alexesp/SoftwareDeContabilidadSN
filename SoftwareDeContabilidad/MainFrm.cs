@@ -88,7 +88,7 @@ namespace SoftwareDeContabilidad
         {
             if (this.treeView1.SelectedNode.Name == "Clientes")
             {
-                SoftwareDeContabilidad.Contabilidad.Clientes frm = new Clientes();
+                SoftwareDeContabilidad.Contabilidad.ClientesFrm frm = new ClientesFrm();
                 frm.MdiParent = this;
                 frm.Show();
             }
@@ -96,7 +96,7 @@ namespace SoftwareDeContabilidad
             //-----------------------------------------------------
             if (this.treeView1.SelectedNode.Name == "Products")
             {
-                SoftwareDeContabilidad.Contabilidad.Productos frm = new Productos();
+                SoftwareDeContabilidad.Contabilidad.ProductosFrm frm = new ProductosFrm();
                 frm.MdiParent = this;
                 frm.Show();
             }
