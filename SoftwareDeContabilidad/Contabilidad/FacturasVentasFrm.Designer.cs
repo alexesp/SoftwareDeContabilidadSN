@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasVentasFrm));
             toolStrip1 = new ToolStrip();
             new_butt = new ToolStripButton();
@@ -43,7 +44,11 @@
             search_butt = new ToolStripButton();
             toolStripSeparator6 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
-            discount_textBox6 = new TextBox();
+            other_numericUpDown2 = new NumericUpDown();
+            shipping_numericUpDown1 = new NumericUpDown();
+            button1 = new Button();
+            invoice_date_dtp = new DateTimePicker();
+            comment_textBox6 = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -59,15 +64,18 @@
             reg_date_label13 = new Label();
             reg_user_label11 = new Label();
             reg_user_label10 = new Label();
-            invoice_date_dtp = new DateTimePicker();
-            button1 = new Button();
-            shipping_numericUpDown1 = new NumericUpDown();
-            other_numericUpDown2 = new NumericUpDown();
+            cu_id_textBox1 = new TextBox();
+            label7 = new Label();
+            bindingSource1 = new BindingSource(components);
+            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
+            salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -87,8 +95,8 @@
             new_butt.ImageScaling = ToolStripItemImageScaling.None;
             new_butt.ImageTransparentColor = Color.Magenta;
             new_butt.Name = "new_butt";
-            new_butt.Size = new Size(90, 51);
-            new_butt.Text = "Nuevo";
+            new_butt.Size = new Size(120, 51);
+            new_butt.Text = "Nueva factura";
             new_butt.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
@@ -122,11 +130,13 @@
             del_butt.Size = new Size(90, 51);
             del_butt.Text = "Eliminar";
             del_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            del_butt.Visible = false;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 54);
+            toolStripSeparator3.Visible = false;
             // 
             // save_butt
             // 
@@ -186,7 +196,7 @@
             groupBox1.Controls.Add(shipping_numericUpDown1);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(invoice_date_dtp);
-            groupBox1.Controls.Add(discount_textBox6);
+            groupBox1.Controls.Add(comment_textBox6);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
@@ -197,17 +207,52 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 70);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(776, 404);
+            groupBox1.Size = new Size(536, 404);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
             // 
-            // discount_textBox6
+            // other_numericUpDown2
             // 
-            discount_textBox6.Location = new Point(194, 215);
-            discount_textBox6.Name = "discount_textBox6";
-            discount_textBox6.Size = new Size(316, 30);
-            discount_textBox6.TabIndex = 11;
+            other_numericUpDown2.DataBindings.Add(new Binding("Value", bindingSource1, "Other", true));
+            other_numericUpDown2.Location = new Point(194, 179);
+            other_numericUpDown2.Name = "other_numericUpDown2";
+            other_numericUpDown2.Size = new Size(316, 30);
+            other_numericUpDown2.TabIndex = 22;
+            // 
+            // shipping_numericUpDown1
+            // 
+            shipping_numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource1, "Shipping", true));
+            shipping_numericUpDown1.Location = new Point(194, 146);
+            shipping_numericUpDown1.Name = "shipping_numericUpDown1";
+            shipping_numericUpDown1.Size = new Size(316, 30);
+            shipping_numericUpDown1.TabIndex = 21;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(18, 112);
+            button1.Name = "button1";
+            button1.Size = new Size(170, 29);
+            button1.TabIndex = 20;
+            button1.Text = "Nombre del cliente:";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // invoice_date_dtp
+            // 
+            invoice_date_dtp.DataBindings.Add(new Binding("Text", bindingSource1, "InvoiceDate", true));
+            invoice_date_dtp.Format = DateTimePickerFormat.Short;
+            invoice_date_dtp.Location = new Point(194, 74);
+            invoice_date_dtp.Name = "invoice_date_dtp";
+            invoice_date_dtp.Size = new Size(316, 30);
+            invoice_date_dtp.TabIndex = 19;
+            // 
+            // comment_textBox6
+            // 
+            comment_textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "Comment", true));
+            comment_textBox6.Location = new Point(194, 215);
+            comment_textBox6.Name = "comment_textBox6";
+            comment_textBox6.Size = new Size(316, 30);
+            comment_textBox6.TabIndex = 11;
             // 
             // label6
             // 
@@ -239,6 +284,7 @@
             // cu_name_textBox3
             // 
             cu_name_textBox3.BorderStyle = BorderStyle.FixedSingle;
+            cu_name_textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "CustomerName", true));
             cu_name_textBox3.Location = new Point(194, 110);
             cu_name_textBox3.Name = "cu_name_textBox3";
             cu_name_textBox3.ReadOnly = true;
@@ -265,6 +311,7 @@
             // id_textBox1
             // 
             id_textBox1.BorderStyle = BorderStyle.FixedSingle;
+            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "InvoiceId", true));
             id_textBox1.Location = new Point(194, 38);
             id_textBox1.Name = "id_textBox1";
             id_textBox1.ReadOnly = true;
@@ -346,42 +393,47 @@
             reg_user_label10.TabIndex = 1;
             reg_user_label10.Text = "Usuario Registrado:";
             // 
-            // invoice_date_dtp
+            // cu_id_textBox1
             // 
-            invoice_date_dtp.Format = DateTimePickerFormat.Short;
-            invoice_date_dtp.Location = new Point(194, 74);
-            invoice_date_dtp.Name = "invoice_date_dtp";
-            invoice_date_dtp.Size = new Size(316, 30);
-            invoice_date_dtp.TabIndex = 19;
+            cu_id_textBox1.BorderStyle = BorderStyle.FixedSingle;
+            cu_id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "CustomerId", true));
+            cu_id_textBox1.Location = new Point(684, 180);
+            cu_id_textBox1.Name = "cu_id_textBox1";
+            cu_id_textBox1.ReadOnly = true;
+            cu_id_textBox1.Size = new Size(105, 30);
+            cu_id_textBox1.TabIndex = 10;
             // 
-            // button1
+            // label7
             // 
-            button1.Location = new Point(18, 112);
-            button1.Name = "button1";
-            button1.Size = new Size(170, 29);
-            button1.TabIndex = 20;
-            button1.Text = "Nombre del cliente:";
-            button1.UseVisualStyleBackColor = true;
+            label7.AutoSize = true;
+            label7.Location = new Point(563, 182);
+            label7.Name = "label7";
+            label7.Size = new Size(115, 23);
+            label7.TabIndex = 9;
+            label7.Text = "Id del Cliente:";
             // 
-            // shipping_numericUpDown1
+            // bindingSource1
             // 
-            shipping_numericUpDown1.Location = new Point(194, 146);
-            shipping_numericUpDown1.Name = "shipping_numericUpDown1";
-            shipping_numericUpDown1.Size = new Size(316, 30);
-            shipping_numericUpDown1.TabIndex = 21;
+            bindingSource1.DataMember = "SalesInvoice";
+            bindingSource1.DataSource = accDataSet1;
             // 
-            // other_numericUpDown2
+            // accDataSet1
             // 
-            other_numericUpDown2.Location = new Point(194, 179);
-            other_numericUpDown2.Name = "other_numericUpDown2";
-            other_numericUpDown2.Size = new Size(316, 30);
-            other_numericUpDown2.TabIndex = 22;
+            accDataSet1.DataSetName = "AccDataSet";
+            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salesInvoiceTableAdapter1
+            // 
+            salesInvoiceTableAdapter1.ClearBeforeFill = true;
             // 
             // FacturasVentasFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 670);
+            Controls.Add(cu_id_textBox1);
+            Controls.Add(label7);
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             Controls.Add(toolStrip1);
@@ -395,10 +447,12 @@
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -419,7 +473,7 @@
         private ToolStripButton search_butt;
         private ToolStripSeparator toolStripSeparator6;
         private GroupBox groupBox1;
-        private TextBox discount_textBox6;
+        private TextBox comment_textBox6;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -439,5 +493,10 @@
         private Button button1;
         private NumericUpDown shipping_numericUpDown1;
         private NumericUpDown other_numericUpDown2;
+        private TextBox cu_id_textBox1;
+        private Label label7;
+        private BindingSource bindingSource1;
+        private DataSet.AccDataSet accDataSet1;
+        private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter1;
     }
 }
