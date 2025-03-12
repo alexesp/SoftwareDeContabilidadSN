@@ -100,6 +100,18 @@ namespace SoftwareDeContabilidad
                 frm.MdiParent = this;
                 frm.Show();
             }
+
+            //---------------------------------------Facturas_de_ventas
+
+            if (this.treeView1.SelectedNode.Name == "Facturas_de_ventas")
+            {
+                SoftwareDeContabilidad.Contabilidad.FacturasVentasFrm frm = new FacturasVentasFrm();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+
+            //---------------------------------------
+
         }
 
         private void tools_button1_Click(object sender, EventArgs e)

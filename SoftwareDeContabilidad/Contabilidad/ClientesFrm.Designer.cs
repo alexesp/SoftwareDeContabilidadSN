@@ -649,7 +649,7 @@
             // 
             customersTableAdapter1.ClearBeforeFill = true;
             // 
-            // Clientes
+            // ClientesFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -661,7 +661,7 @@
             Controls.Add(toolStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Clientes";
+            Name = "ClientesFrm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
             Load += Clientes_Load;
