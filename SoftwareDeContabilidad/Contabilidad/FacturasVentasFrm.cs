@@ -142,6 +142,11 @@ namespace SoftwareDeContabilidad.Contabilidad
                 string a;
                 a = frm.fname_label5.Text + "  " + frm.lname_label6.Text;
                 this.cu_name_textBox3.Text = a;
+
+
+
+
+
             }
         }
     }
