@@ -8313,13 +8313,27 @@ SELECT ID, InvoiceId, ProductName, ProductId, Qty, Unit, UnitPrice, Discount, Am
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::Microsoft.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::Microsoft.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, InvoiceId, ProductName, ProductId, Qty, Unit, UnitPrice, Discount, Amo" +
                 "unt, TaxRate, TaxSum, NetAmount, Comment, RegUser, RegDate, RegTime\r\nFROM   Sale" +
                 "sInvoiceProducts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Microsoft.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID, InvoiceId, ProductName, ProductId, Qty, Unit, UnitPrice, Discount, Amo" +
+                "unt, TaxRate, TaxSum, NetAmount, Comment, RegUser, RegDate, RegTime\r\nFROM   Sale" +
+                "sInvoiceProducts\r\nWHERE (InvoiceId = @search_invoiceID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Microsoft.Data.SqlClient.SqlParameter param = new global::Microsoft.Data.SqlClient.SqlParameter();
+            param.ParameterName = "@search_invoiceID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.SqlDbType = global::System.Data.SqlDbType.Int;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "InvoiceId";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8328,6 +8342,25 @@ SELECT ID, InvoiceId, ProductName, ProductId, Qty, Unit, UnitPrice, Discount, Am
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
         public virtual int Fill_All(AccDataSet.SalesInvoiceProductsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_InvoiceId(AccDataSet.SalesInvoiceProductsDataTable dataTable, global::System.Nullable<int> search_invoiceID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((search_invoiceID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(search_invoiceID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

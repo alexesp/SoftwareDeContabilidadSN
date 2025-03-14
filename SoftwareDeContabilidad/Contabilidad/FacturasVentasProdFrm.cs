@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SoftwareDeContabilidad.Contabilidad
 {
-    public partial class FacturasVentasProdFrm: Form
+    public partial class FacturasVentasProdFrm : Form
     {
         public FacturasVentasProdFrm()
         {
@@ -67,13 +67,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             //------------------
         }
 
-        private void SalesInvoiceProFrm_Load(object sender, EventArgs e)
-        {
-            save_cancel_butts();
-            //this.salesInvoiceTableAdapter1.FillBy_InvoiceId(this.accDs1.SalesInvoiceProducts, selected_invoice_id);
-            //----------------------
-
-        }
+      
 
         private void edit_butt_Click(object sender, EventArgs e)
         {
@@ -101,9 +95,9 @@ namespace SoftwareDeContabilidad.Contabilidad
             //try
             //{
             //    this.bindingSource1.EndEdit();
-                //int rv = 0;
-                //rv = this.salesInvoiceTableAdapter1.Update(this.accDataSet1.SalesInvoiceProducts);
-                //---------------
+            //int rv = 0;
+            //rv = this.salesInvoiceTableAdapter1.Update(this.accDataSet1.SalesInvoiceProducts);
+            //---------------
             //    if (rv > 0)
             //    {
             //        save_cancel_butts();
@@ -131,22 +125,22 @@ namespace SoftwareDeContabilidad.Contabilidad
 
         //private void product_search_Butt_Click(object sender, EventArgs e)
         //{
-           // AccountigSoft.Accounting.ProductSearch frm = new ProductSearch();
-            //frm.ShowDialog();
-            //if (frm.DialogResult == DialogResult.OK)
-            //{
-            //    this.product_id_textBox7.Text = frm.id_label4.Text;
-            //    //--------------
-            //    this.product_name_textBox3.Text = frm.ProductName_label5.Text;
-            //    //--------------unit-price-discount-------------------
-            //    this.unit_textBox1.Text = frm.unit_lbl.Text;
-            //    this.price_nud.Value = decimal.Parse(frm.price_lbl.Text);
-            //    this.discount_nud.Value = decimal.Parse(frm.discount_lbl.Text);
-            //    //----------------------------------------------------
-            //    sum_calc();
-                //-----------------------
+        // AccountigSoft.Accounting.ProductSearch frm = new ProductSearch();
+        //frm.ShowDialog();
+        //if (frm.DialogResult == DialogResult.OK)
+        //{
+        //    this.product_id_textBox7.Text = frm.id_label4.Text;
+        //    //--------------
+        //    this.product_name_textBox3.Text = frm.ProductName_label5.Text;
+        //    //--------------unit-price-discount-------------------
+        //    this.unit_textBox1.Text = frm.unit_lbl.Text;
+        //    this.price_nud.Value = decimal.Parse(frm.price_lbl.Text);
+        //    this.discount_nud.Value = decimal.Parse(frm.discount_lbl.Text);
+        //    //----------------------------------------------------
+        //    sum_calc();
+        //-----------------------
 
-            //}
+        //}
         //}
 
         public void sum_calc()
@@ -177,6 +171,13 @@ namespace SoftwareDeContabilidad.Contabilidad
             //{
             //    MessageBox.Show("Error: " + ex.Message);
             //}
+        }
+
+        private void FacturasVentasProdFrm_Load(object sender, EventArgs e)
+        {
+            save_cancel_butts();
+            this.salesInvoiceProductsTableAdapter1.FillBy_InvoiceId(this.accDataSet1.SalesInvoiceProducts, selected_invoice_id);
+            //----------------------
         }
 
         //private void Qty_nud_ValueChanged(object sender, EventArgs e)

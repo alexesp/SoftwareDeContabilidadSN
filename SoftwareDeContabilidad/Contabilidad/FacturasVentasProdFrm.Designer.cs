@@ -101,7 +101,7 @@
             commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             products_id_textBox1 = new TextBox();
             label7 = new Label();
-            salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
+            salesInvoiceProductsTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceProductsTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)net_amount_numericUpDown1).BeginInit();
@@ -804,9 +804,9 @@
             label7.TabIndex = 11;
             label7.Text = "Id del Producto:";
             // 
-            // salesInvoiceTableAdapter1
+            // salesInvoiceProductsTableAdapter1
             // 
-            salesInvoiceTableAdapter1.ClearBeforeFill = true;
+            salesInvoiceProductsTableAdapter1.ClearBeforeFill = true;
             // 
             // FacturasVentasProdFrm
             // 
@@ -826,6 +826,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Listado de Productos";
+            Load += FacturasVentasProdFrm_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -905,7 +906,6 @@
         private NumericUpDown net_amount_numericUpDown1;
         private Label label20;
         private DataSet.AccDataSet accDataSet1;
-        private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter1;
         private BindingSource bindingSource1;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn invoiceIdDataGridViewTextBoxColumn;
@@ -920,5 +920,6 @@
         private DataGridViewTextBoxColumn taxSumDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn netAmountDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private DataSet.AccDataSetTableAdapters.SalesInvoiceProductsTableAdapter salesInvoiceProductsTableAdapter1;
     }
 }
