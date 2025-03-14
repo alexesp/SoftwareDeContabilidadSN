@@ -204,14 +204,14 @@
   <data name="search_butt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ01MPJiQmBg1
-        wcO2NfFdfAsT0LchRo5IuzJm2i3I6CKFRT3slzR7mNl2OvPPNIpKSkpWpHqLNRD6JhbmGXrjEVwM3+1X
-        mqdY6uuqwj3+T2FAMjnNDsP8NX4FmZ7wfzcGpLmfHSImjyBMa19NG1EHd+gLyrRBmv7cx9zxPdbG3txu
-        PEzrcnIWRVjhPg6sxFKfkx/5N5L0mHsEY2uepd0d/jMuCFeOjTVBgvNpz785BysgzMAGLfQVtwZh1e5q
-        2uK2ZYBMO5ke+twWhE+/FVwAoLDpy8BtQdg+lwZJ7dy2FIW7mXCn3BTExhnojUfcFgRNOLuRMm1uW0Y9
-        SY8K0QCN1/lGq3eBF29d6EtuDYL62I1Xg9Tf3P4dIHTXHi7fXmo9rHJ7MDTbM0GlLoi8TFD/664XLiT6
-        gXusDc32rBQ0Ewa2zxU2rdoVNqnms5nxeRX5JtBs9+XIW5R2uvnWgiBN0Hh1Lx8FM5xmrdonwfmaL2Ss
-        6CBWpQzC8yUIZQ65z9ZZCEKZA27/Fejmf3Z4yb/nA/TQiMz+IYfYAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ01MPJgQD0ZN
+        8LBtTXwX38IE9GlIjByRdmXMtFuQ0UUKi3rYL2n2MLPtdOafaRSVlJSsSPUWayD0TSzMM/TGI7gYvtuv
+        NE+x1NdVhXv8n8KAZHKaHYb5a/wKMj3h/24MSHM/O0RMHkGY1r6aNqIO7tAXlGmDNP25j7nje6yNvbnd
+        eJjW5eQsirDCfRxYiaU+Jz/ybyTpMfcIxtY8S7s7/GdcEK4cG2uCBOfTnn9zDlZAmIENWugrbg3Cqt3V
+        tMVtywCZdjI99LktCJ9+K7gAQGHTl4HbgrB9Lg2S2rltKQp3M+FOuSmIjTPQG4+4LQiacHYjZdrctox6
+        kh4VogEar/ONVu8CL9660JfcGgT1sRuvBqm/uf07QOiuPVy+vdR6WOX2YGi2Z4JKXRB5maD+110vXEj0
+        A/dYG5rtWSloJgxsnytsWrUrbFLNZzPj8yryTaDZ7suRtyjtdPOtBUGaoPHqXj4KZjjNWrVPgvM1X8hY
+        0UGsShmE50sQyhxyn62zEIQyB9z+K9DN/+zwkn/PB5IBiMHOk8RmAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -228,5 +228,8 @@
   </metadata>
   <metadata name="salesInvoiceTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>482, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
 </root>

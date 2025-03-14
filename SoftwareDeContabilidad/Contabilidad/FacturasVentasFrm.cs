@@ -136,7 +136,7 @@ namespace SoftwareDeContabilidad.Contabilidad
         {
             SoftwareDeContabilidad.Contabilidad.BuscarClienteFrm frm = new BuscarClienteFrm();
             frm.ShowDialog();
-            if(frm.DialogResult == DialogResult.OK)
+            if (frm.DialogResult == DialogResult.OK)
             {
                 this.cu_id_textBox1.Text = frm.id_label4.Text;
                 string a;
@@ -148,6 +148,13 @@ namespace SoftwareDeContabilidad.Contabilidad
 
 
             }
+        }
+
+        private void pro_list_button1_Click(object sender, EventArgs e)
+        {
+            SoftwareDeContabilidad.Contabilidad.FacturasVentasProdFrm frm = new FacturasVentasProdFrm();
+            frm.selected_invoice_id = int.Parse(this.id_textBox1.Text);
+            frm.ShowDialog();
         }
     }
 }

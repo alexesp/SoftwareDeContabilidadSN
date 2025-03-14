@@ -46,6 +46,8 @@
             groupBox1 = new GroupBox();
             label19 = new Label();
             net_amount_numericUpDown1 = new NumericUpDown();
+            bindingSource1 = new BindingSource(components);
+            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
             label20 = new Label();
             label17 = new Label();
             tax_sum_numericUpDown1 = new NumericUpDown();
@@ -84,14 +86,27 @@
             reg_user_label11 = new Label();
             reg_user_label10 = new Label();
             dataGridView1 = new DataGridView();
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            invoiceIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            productNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            productIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            qtyDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            unitDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            unitPriceDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            discountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            amountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            taxRateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            taxSumDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            netAmountDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             products_id_textBox1 = new TextBox();
             label7 = new Label();
-            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
             salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
-            bindingSource1 = new BindingSource(components);
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)net_amount_numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tax_sum_numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tax_rate_numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)amount_numericUpDown1).BeginInit();
@@ -100,8 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)qty_numericUpDown1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -274,6 +287,17 @@
             net_amount_numericUpDown1.Name = "net_amount_numericUpDown1";
             net_amount_numericUpDown1.Size = new Size(316, 30);
             net_amount_numericUpDown1.TabIndex = 42;
+            // 
+            // bindingSource1
+            // 
+            bindingSource1.DataMember = "SalesInvoiceProducts";
+            bindingSource1.DataSource = accDataSet1;
+            // 
+            // accDataSet1
+            // 
+            accDataSet1.DataSetName = "AccDataSet";
+            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label20
             // 
@@ -631,7 +655,10 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, invoiceIdDataGridViewTextBoxColumn, productNameDataGridViewTextBoxColumn, productIdDataGridViewTextBoxColumn, qtyDataGridViewTextBoxColumn, unitDataGridViewTextBoxColumn, unitPriceDataGridViewTextBoxColumn, discountDataGridViewTextBoxColumn, amountDataGridViewTextBoxColumn, taxRateDataGridViewTextBoxColumn, taxSumDataGridViewTextBoxColumn, netAmountDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = bindingSource1;
             dataGridView1.Location = new Point(12, 549);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -640,6 +667,123 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(776, 177);
             dataGridView1.TabIndex = 10;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // invoiceIdDataGridViewTextBoxColumn
+            // 
+            invoiceIdDataGridViewTextBoxColumn.DataPropertyName = "InvoiceId";
+            invoiceIdDataGridViewTextBoxColumn.HeaderText = "Numero de la factura";
+            invoiceIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            invoiceIdDataGridViewTextBoxColumn.Name = "invoiceIdDataGridViewTextBoxColumn";
+            invoiceIdDataGridViewTextBoxColumn.ReadOnly = true;
+            invoiceIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            productNameDataGridViewTextBoxColumn.HeaderText = "Nombre del Producto";
+            productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            productNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            productIdDataGridViewTextBoxColumn.HeaderText = "Id del Producto";
+            productIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            productIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // qtyDataGridViewTextBoxColumn
+            // 
+            qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
+            qtyDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            qtyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
+            qtyDataGridViewTextBoxColumn.ReadOnly = true;
+            qtyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            unitDataGridViewTextBoxColumn.HeaderText = "Unidad";
+            unitDataGridViewTextBoxColumn.MinimumWidth = 6;
+            unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            unitDataGridViewTextBoxColumn.ReadOnly = true;
+            unitDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // unitPriceDataGridViewTextBoxColumn
+            // 
+            unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
+            unitPriceDataGridViewTextBoxColumn.HeaderText = "Precio unitario";
+            unitPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
+            unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            unitPriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // discountDataGridViewTextBoxColumn
+            // 
+            discountDataGridViewTextBoxColumn.DataPropertyName = "Discount";
+            discountDataGridViewTextBoxColumn.HeaderText = "Descuento";
+            discountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
+            discountDataGridViewTextBoxColumn.ReadOnly = true;
+            discountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            amountDataGridViewTextBoxColumn.HeaderText = "Cantidad total";
+            amountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            amountDataGridViewTextBoxColumn.ReadOnly = true;
+            amountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // taxRateDataGridViewTextBoxColumn
+            // 
+            taxRateDataGridViewTextBoxColumn.DataPropertyName = "TaxRate";
+            taxRateDataGridViewTextBoxColumn.HeaderText = "Tasa de impuesto";
+            taxRateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            taxRateDataGridViewTextBoxColumn.Name = "taxRateDataGridViewTextBoxColumn";
+            taxRateDataGridViewTextBoxColumn.ReadOnly = true;
+            taxRateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // taxSumDataGridViewTextBoxColumn
+            // 
+            taxSumDataGridViewTextBoxColumn.DataPropertyName = "TaxSum";
+            taxSumDataGridViewTextBoxColumn.HeaderText = "Total de impuesto";
+            taxSumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            taxSumDataGridViewTextBoxColumn.Name = "taxSumDataGridViewTextBoxColumn";
+            taxSumDataGridViewTextBoxColumn.ReadOnly = true;
+            taxSumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // netAmountDataGridViewTextBoxColumn
+            // 
+            netAmountDataGridViewTextBoxColumn.DataPropertyName = "NetAmount";
+            netAmountDataGridViewTextBoxColumn.HeaderText = "Importe neto";
+            netAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            netAmountDataGridViewTextBoxColumn.Name = "netAmountDataGridViewTextBoxColumn";
+            netAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            netAmountDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            commentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            commentDataGridViewTextBoxColumn.ReadOnly = true;
+            commentDataGridViewTextBoxColumn.Width = 125;
             // 
             // products_id_textBox1
             // 
@@ -660,20 +804,9 @@
             label7.TabIndex = 11;
             label7.Text = "Id del Producto:";
             // 
-            // accDataSet1
-            // 
-            accDataSet1.DataSetName = "AccDataSet";
-            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
-            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // salesInvoiceTableAdapter1
             // 
             salesInvoiceTableAdapter1.ClearBeforeFill = true;
-            // 
-            // bindingSource1
-            // 
-            bindingSource1.DataMember = "SalesInvoiceProducts";
-            bindingSource1.DataSource = accDataSet1;
             // 
             // FacturasVentasProdFrm
             // 
@@ -698,6 +831,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)net_amount_numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tax_sum_numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)tax_rate_numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)amount_numericUpDown1).EndInit();
@@ -707,8 +842,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -774,5 +907,18 @@
         private DataSet.AccDataSet accDataSet1;
         private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter1;
         private BindingSource bindingSource1;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn invoiceIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn unitPriceDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn taxRateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn taxSumDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn netAmountDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
     }
 }

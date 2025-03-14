@@ -71,6 +71,8 @@
             cu_id_textBox1 = new TextBox();
             label7 = new Label();
             salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
+            panel2 = new Panel();
+            pro_list_button1 = new Button();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).BeginInit();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
@@ -464,11 +467,30 @@
             // 
             salesInvoiceTableAdapter1.ClearBeforeFill = true;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(pro_list_button1);
+            panel2.Location = new Point(12, 493);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(777, 75);
+            panel2.TabIndex = 11;
+            // 
+            // pro_list_button1
+            // 
+            pro_list_button1.Location = new Point(16, 15);
+            pro_list_button1.Name = "pro_list_button1";
+            pro_list_button1.Size = new Size(185, 48);
+            pro_list_button1.TabIndex = 0;
+            pro_list_button1.Text = "Listado de Productos";
+            pro_list_button1.UseVisualStyleBackColor = true;
+            pro_list_button1.Click += pro_list_button1_Click;
+            // 
             // FacturasVentasFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 670);
+            Controls.Add(panel2);
             Controls.Add(cu_id_textBox1);
             Controls.Add(label7);
             Controls.Add(panel1);
@@ -491,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -538,5 +561,7 @@
         private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter1;
         private Label label8;
         private Label label9;
+        private Panel panel2;
+        private Button pro_list_button1;
     }
 }
