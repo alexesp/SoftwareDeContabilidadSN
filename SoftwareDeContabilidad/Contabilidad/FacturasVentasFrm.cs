@@ -76,7 +76,7 @@ namespace SoftwareDeContabilidad.Contabilidad
         {
             save_cancel_butts();
             //---------------------------------
-            this.salesInvoiceTableAdapter1.Fill_All(this.accDataSet1.SalesInvoice);
+            this.salesInvoiceTableAdapter1.Fill_All(this.accDataSet2.SalesInvoice);
         }
 
         private void edit_butt_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             {
                 this.bindingSource1.EndEdit();
                 int rv;
-                rv = this.salesInvoiceTableAdapter1.Update(this.accDataSet1.SalesInvoice);
+                rv = this.salesInvoiceTableAdapter1.Update(this.accDataSet2.SalesInvoice);
                 //-----------------------------------------------------------------------
                 if (rv > 0)
                 {
@@ -129,7 +129,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             //-----------------------
 
             this.bindingSource1.CancelEdit();
-            this.accDataSet1.Products.RejectChanges();
+            this.accDataSet2.Products.RejectChanges();
         }
 
         private void cu_search_button1_Click(object sender, EventArgs e)

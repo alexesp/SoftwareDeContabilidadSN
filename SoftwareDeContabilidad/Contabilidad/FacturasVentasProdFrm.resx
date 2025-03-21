@@ -204,14 +204,14 @@
   <data name="search_butt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ01MNDHhZNQE
-        D9vWxHfxLUxAn4S7kSPSroyZdgsyukhhUQ/7Jc0eZradzvwzjaKSkpIVqd5iDYS+iYV5ht54BOfDd/uV
-        5imW+rqqcI//UxiQTE6zwzB/jV9Bpif8340Bae5nh4jJIwjT2lfTRtTBHfqCMm2Qpj/3MXd8j7WxN7cb
-        D9O6nJxFEVa4jwMrsdQX5Ef+jSQ95h7B2JpnaXeH/4wLwpVjY02Q4Hza82/OwQoIM7BBC33FrUFYtbua
-        trhtGSDTTqaHPrcF4dNvBRcAKGz6MnBbELbPpUFSO7ctReFuJtwpNwWxcQZ64xG3BUETzm6kTJvbllFP
-        0qNCNEDjdb7R6l3gxVsX+pJbg6A+duPVIPU3t38HCN21h8u3l1oPq9weDM32TFCpCyIvE9T/uuuFC4l+
-        4B5rQ7M9KwXNhIHtc4VNq3aFTar5bGZ8XkW+CTTbfTnyFqWdbr61IEgTNF7dy0fBDKdZq/ZJcL7mCxkr
-        OohVKYPwfAlCmUPus3UWglDmgNt/Bbr5nx1e8u/5AHtciGlOqsdvAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ01MOJhwMmqC
+        h21r4rv4FiagL8IDGDki7cqYabcgo4sUFvWwX9LsYWbb6cw/0ygqKSlZk+ot1kDom1iYZ+hPxtAdvduv
+        NE+x1NdVhQf8n8KAZHqeHYb5a/IKMj3j/24NSHM/P0RMH0GY1qGaNaIO7tEXlGmDNIOFj7nje2yMvbnd
+        eJTW5bQbRVjhPg6sxFJfkB/5N5L0lHsEY2uepd0d/jMuCFeOrTVBgvNpz785BysgzNAGLfQVtwZh1e5q
+        2uK2VYBMO5keBtwWhE+/FVwAoLDpy8BtQdg+lwZJ7dy2EoX7mXBn3BTE1hnoT8bcFgRNOLuRMm1uW0U9
+        SU8K0QCN18VG63eBF29d6EtuDYL62I1Xg9Tf3P4dIHTPHi7fXmp9rHJ7MDTbM0GlLoi8TFD/654XLiT6
+        gXtsDM32rBQ0E4a2zxU2rdoVNqnm85nxeRX5JtBs9+XIW5R2uvnOgiBN0Hh1Lx8FM5plrTogwfmaL2Ws
+        6CDWpQzC8yUIZY65z85ZCkKZI27/Fejmf3Z4yb/nAxiNiF5ntVRfAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -224,6 +224,6 @@
     <value>502, 18</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>101</value>
+    <value>89</value>
   </metadata>
 </root>

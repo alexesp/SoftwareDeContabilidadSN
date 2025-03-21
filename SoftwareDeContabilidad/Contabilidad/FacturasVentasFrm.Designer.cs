@@ -47,8 +47,6 @@
             label9 = new Label();
             label8 = new Label();
             other_numericUpDown2 = new NumericUpDown();
-            bindingSource1 = new BindingSource(components);
-            accDataSet1 = new SoftwareDeContabilidad.DataSet.AccDataSet();
             shipping_numericUpDown1 = new NumericUpDown();
             cu_search_button1 = new Button();
             invoice_date_dtp = new DateTimePicker();
@@ -70,17 +68,19 @@
             reg_user_label10 = new Label();
             cu_id_textBox1 = new TextBox();
             label7 = new Label();
-            salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
             panel2 = new Panel();
             pro_list_button1 = new Button();
+            bindingSource1 = new BindingSource(components);
+            accDataSet2 = new SoftwareDeContabilidad.DataSet.AccDataSet();
+            salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet2).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -253,17 +253,6 @@
             other_numericUpDown2.Size = new Size(316, 30);
             other_numericUpDown2.TabIndex = 22;
             // 
-            // bindingSource1
-            // 
-            bindingSource1.DataMember = "SalesInvoice";
-            bindingSource1.DataSource = accDataSet1;
-            // 
-            // accDataSet1
-            // 
-            accDataSet1.DataSetName = "AccDataSet";
-            accDataSet1.Namespace = "http://tempuri.org/AccDataSet.xsd";
-            accDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // shipping_numericUpDown1
             // 
             shipping_numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource1, "Shipping", true));
@@ -287,7 +276,7 @@
             // 
             // invoice_date_dtp
             // 
-            invoice_date_dtp.DataBindings.Add(new Binding("Value", bindingSource1, "InvoiceDate", true));
+            invoice_date_dtp.DataBindings.Add(new Binding("Text", bindingSource1, "InvoiceDate", true));
             invoice_date_dtp.Format = DateTimePickerFormat.Short;
             invoice_date_dtp.Location = new Point(194, 74);
             invoice_date_dtp.Name = "invoice_date_dtp";
@@ -385,14 +374,13 @@
             panel1.Controls.Add(reg_user_label11);
             panel1.Controls.Add(reg_user_label10);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 629);
+            panel1.Location = new Point(0, 714);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 41);
             panel1.TabIndex = 8;
             // 
             // reg_time_label14
             // 
-            reg_time_label14.DataBindings.Add(new Binding("Text", bindingSource1, "RegTime", true));
             reg_time_label14.Location = new Point(697, 8);
             reg_time_label14.Name = "reg_time_label14";
             reg_time_label14.Size = new Size(91, 23);
@@ -410,7 +398,6 @@
             // 
             // reg_date_label12
             // 
-            reg_date_label12.DataBindings.Add(new Binding("Text", bindingSource1, "RegDate", true));
             reg_date_label12.Location = new Point(445, 8);
             reg_date_label12.Name = "reg_date_label12";
             reg_date_label12.Size = new Size(102, 23);
@@ -428,7 +415,6 @@
             // 
             // reg_user_label11
             // 
-            reg_user_label11.DataBindings.Add(new Binding("Text", bindingSource1, "RegUser", true));
             reg_user_label11.Location = new Point(175, 8);
             reg_user_label11.Name = "reg_user_label11";
             reg_user_label11.Size = new Size(127, 23);
@@ -463,10 +449,6 @@
             label7.TabIndex = 9;
             label7.Text = "Id del Cliente:";
             // 
-            // salesInvoiceTableAdapter1
-            // 
-            salesInvoiceTableAdapter1.ClearBeforeFill = true;
-            // 
             // panel2
             // 
             panel2.Controls.Add(pro_list_button1);
@@ -485,11 +467,26 @@
             pro_list_button1.UseVisualStyleBackColor = true;
             pro_list_button1.Click += pro_list_button1_Click;
             // 
+            // bindingSource1
+            // 
+            bindingSource1.DataMember = "SalesInvoice";
+            bindingSource1.DataSource = accDataSet2;
+            // 
+            // accDataSet2
+            // 
+            accDataSet2.DataSetName = "AccDataSet";
+            accDataSet2.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salesInvoiceTableAdapter1
+            // 
+            salesInvoiceTableAdapter1.ClearBeforeFill = true;
+            // 
             // FacturasVentasFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 670);
+            ClientSize = new Size(800, 755);
             Controls.Add(panel2);
             Controls.Add(cu_id_textBox1);
             Controls.Add(label7);
@@ -508,12 +505,12 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet1).EndInit();
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -556,12 +553,13 @@
         private NumericUpDown other_numericUpDown2;
         private TextBox cu_id_textBox1;
         private Label label7;
-        private BindingSource bindingSource1;
         private DataSet.AccDataSet accDataSet1;
         private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter1;
         private Label label8;
         private Label label9;
         private Panel panel2;
         private Button pro_list_button1;
+        private BindingSource bindingSource1;
+        private DataSet.AccDataSet accDataSet2;
     }
 }
