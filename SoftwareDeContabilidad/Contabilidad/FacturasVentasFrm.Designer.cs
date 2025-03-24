@@ -47,6 +47,8 @@
             label9 = new Label();
             label8 = new Label();
             other_numericUpDown2 = new NumericUpDown();
+            bindingSource3 = new BindingSource(components);
+            accDataSet3 = new SoftwareDeContabilidad.DataSet.AccDataSet();
             shipping_numericUpDown1 = new NumericUpDown();
             cu_search_button1 = new Button();
             invoice_date_dtp = new DateTimePicker();
@@ -70,17 +72,33 @@
             label7 = new Label();
             panel2 = new Panel();
             pro_list_button1 = new Button();
-            bindingSource1 = new BindingSource(components);
-            accDataSet2 = new SoftwareDeContabilidad.DataSet.AccDataSet();
-            salesInvoiceTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
+            dataGridView1 = new DataGridView();
+            CustomerId = new DataGridViewTextBoxColumn();
+            InvoiceDate = new DataGridViewTextBoxColumn();
+            CustomerName = new DataGridViewTextBoxColumn();
+            Shipping = new DataGridViewTextBoxColumn();
+            Other = new DataGridViewTextBoxColumn();
+            Comment = new DataGridViewTextBoxColumn();
+            salesInvoiceTableAdapter2 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter();
+            invoiceIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            invoiceDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            customerIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            customerNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            shippingDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            otherDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            commentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regUserDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regDateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            regTimeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -244,7 +262,7 @@
             // 
             // other_numericUpDown2
             // 
-            other_numericUpDown2.DataBindings.Add(new Binding("Value", bindingSource1, "Other", true));
+            other_numericUpDown2.DataBindings.Add(new Binding("Value", bindingSource3, "Other", true));
             other_numericUpDown2.DecimalPlaces = 2;
             other_numericUpDown2.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             other_numericUpDown2.Location = new Point(194, 179);
@@ -253,9 +271,20 @@
             other_numericUpDown2.Size = new Size(316, 30);
             other_numericUpDown2.TabIndex = 22;
             // 
+            // bindingSource3
+            // 
+            bindingSource3.DataMember = "SalesInvoice";
+            bindingSource3.DataSource = accDataSet3;
+            // 
+            // accDataSet3
+            // 
+            accDataSet3.DataSetName = "AccDataSet";
+            accDataSet3.Namespace = "http://tempuri.org/AccDataSet.xsd";
+            accDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // shipping_numericUpDown1
             // 
-            shipping_numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource1, "Shipping", true));
+            shipping_numericUpDown1.DataBindings.Add(new Binding("Value", bindingSource3, "Shipping", true));
             shipping_numericUpDown1.DecimalPlaces = 2;
             shipping_numericUpDown1.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             shipping_numericUpDown1.Location = new Point(194, 146);
@@ -276,7 +305,7 @@
             // 
             // invoice_date_dtp
             // 
-            invoice_date_dtp.DataBindings.Add(new Binding("Text", bindingSource1, "InvoiceDate", true));
+            invoice_date_dtp.DataBindings.Add(new Binding("Value", bindingSource3, "InvoiceDate", true));
             invoice_date_dtp.Format = DateTimePickerFormat.Short;
             invoice_date_dtp.Location = new Point(194, 74);
             invoice_date_dtp.Name = "invoice_date_dtp";
@@ -285,7 +314,7 @@
             // 
             // comment_textBox6
             // 
-            comment_textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "Comment", true));
+            comment_textBox6.DataBindings.Add(new Binding("Text", bindingSource3, "Comment", true));
             comment_textBox6.Location = new Point(194, 215);
             comment_textBox6.Name = "comment_textBox6";
             comment_textBox6.Size = new Size(316, 30);
@@ -321,7 +350,7 @@
             // cu_name_textBox3
             // 
             cu_name_textBox3.BorderStyle = BorderStyle.FixedSingle;
-            cu_name_textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "CustomerName", true));
+            cu_name_textBox3.DataBindings.Add(new Binding("Text", bindingSource3, "CustomerName", true));
             cu_name_textBox3.Location = new Point(194, 110);
             cu_name_textBox3.Name = "cu_name_textBox3";
             cu_name_textBox3.ReadOnly = true;
@@ -348,7 +377,7 @@
             // id_textBox1
             // 
             id_textBox1.BorderStyle = BorderStyle.FixedSingle;
-            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "InvoiceId", true));
+            id_textBox1.DataBindings.Add(new Binding("Text", bindingSource3, "InvoiceId", true));
             id_textBox1.Location = new Point(194, 38);
             id_textBox1.Name = "id_textBox1";
             id_textBox1.ReadOnly = true;
@@ -374,13 +403,14 @@
             panel1.Controls.Add(reg_user_label11);
             panel1.Controls.Add(reg_user_label10);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 714);
+            panel1.Location = new Point(0, 744);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 41);
             panel1.TabIndex = 8;
             // 
             // reg_time_label14
             // 
+            reg_time_label14.DataBindings.Add(new Binding("Text", bindingSource3, "RegTime", true));
             reg_time_label14.Location = new Point(697, 8);
             reg_time_label14.Name = "reg_time_label14";
             reg_time_label14.Size = new Size(91, 23);
@@ -398,6 +428,7 @@
             // 
             // reg_date_label12
             // 
+            reg_date_label12.DataBindings.Add(new Binding("Text", bindingSource3, "RegDate", true));
             reg_date_label12.Location = new Point(445, 8);
             reg_date_label12.Name = "reg_date_label12";
             reg_date_label12.Size = new Size(102, 23);
@@ -415,6 +446,7 @@
             // 
             // reg_user_label11
             // 
+            reg_user_label11.DataBindings.Add(new Binding("Text", bindingSource3, "RegUser", true));
             reg_user_label11.Location = new Point(175, 8);
             reg_user_label11.Name = "reg_user_label11";
             reg_user_label11.Size = new Size(127, 23);
@@ -433,7 +465,7 @@
             // cu_id_textBox1
             // 
             cu_id_textBox1.BorderStyle = BorderStyle.FixedSingle;
-            cu_id_textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "CustomerId", true));
+            cu_id_textBox1.DataBindings.Add(new Binding("Text", bindingSource3, "CustomerId", true));
             cu_id_textBox1.Location = new Point(684, 180);
             cu_id_textBox1.Name = "cu_id_textBox1";
             cu_id_textBox1.ReadOnly = true;
@@ -454,12 +486,12 @@
             panel2.Controls.Add(pro_list_button1);
             panel2.Location = new Point(12, 493);
             panel2.Name = "panel2";
-            panel2.Size = new Size(777, 75);
+            panel2.Size = new Size(777, 65);
             panel2.TabIndex = 11;
             // 
             // pro_list_button1
             // 
-            pro_list_button1.Location = new Point(16, 15);
+            pro_list_button1.Location = new Point(10, 9);
             pro_list_button1.Name = "pro_list_button1";
             pro_list_button1.Size = new Size(185, 48);
             pro_list_button1.TabIndex = 0;
@@ -467,26 +499,177 @@
             pro_list_button1.UseVisualStyleBackColor = true;
             pro_list_button1.Click += pro_list_button1_Click;
             // 
-            // bindingSource1
+            // dataGridView1
             // 
-            bindingSource1.DataMember = "SalesInvoice";
-            bindingSource1.DataSource = accDataSet2;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { CustomerId, InvoiceDate, CustomerName, Shipping, Other, Comment, invoiceIdDataGridViewTextBoxColumn, invoiceDateDataGridViewTextBoxColumn, customerIdDataGridViewTextBoxColumn, customerNameDataGridViewTextBoxColumn, shippingDataGridViewTextBoxColumn, otherDataGridViewTextBoxColumn, commentDataGridViewTextBoxColumn, regUserDataGridViewTextBoxColumn, regDateDataGridViewTextBoxColumn, regTimeDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = bindingSource3;
+            dataGridView1.Location = new Point(12, 564);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 40;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(776, 174);
+            dataGridView1.TabIndex = 12;
             // 
-            // accDataSet2
+            // CustomerId
             // 
-            accDataSet2.DataSetName = "AccDataSet";
-            accDataSet2.Namespace = "http://tempuri.org/AccDataSet.xsd";
-            accDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            CustomerId.DataPropertyName = "CustomerId";
+            CustomerId.HeaderText = "CustomerId";
+            CustomerId.MinimumWidth = 6;
+            CustomerId.Name = "CustomerId";
+            CustomerId.ReadOnly = true;
+            CustomerId.Width = 125;
             // 
-            // salesInvoiceTableAdapter1
+            // InvoiceDate
             // 
-            salesInvoiceTableAdapter1.ClearBeforeFill = true;
+            InvoiceDate.DataPropertyName = "InvoiceDate";
+            InvoiceDate.HeaderText = "InvoiceDate";
+            InvoiceDate.MinimumWidth = 6;
+            InvoiceDate.Name = "InvoiceDate";
+            InvoiceDate.ReadOnly = true;
+            InvoiceDate.Width = 125;
+            // 
+            // CustomerName
+            // 
+            CustomerName.DataPropertyName = "CustomerName";
+            CustomerName.HeaderText = "CustomerName";
+            CustomerName.MinimumWidth = 6;
+            CustomerName.Name = "CustomerName";
+            CustomerName.ReadOnly = true;
+            CustomerName.Width = 125;
+            // 
+            // Shipping
+            // 
+            Shipping.DataPropertyName = "Shipping";
+            Shipping.HeaderText = "Shipping";
+            Shipping.MinimumWidth = 6;
+            Shipping.Name = "Shipping";
+            Shipping.ReadOnly = true;
+            Shipping.Width = 125;
+            // 
+            // Other
+            // 
+            Other.DataPropertyName = "Other";
+            Other.HeaderText = "Other";
+            Other.MinimumWidth = 6;
+            Other.Name = "Other";
+            Other.ReadOnly = true;
+            Other.Width = 125;
+            // 
+            // Comment
+            // 
+            Comment.DataPropertyName = "Comment";
+            Comment.HeaderText = "Comment";
+            Comment.MinimumWidth = 6;
+            Comment.Name = "Comment";
+            Comment.ReadOnly = true;
+            Comment.Width = 125;
+            // 
+            // salesInvoiceTableAdapter2
+            // 
+            salesInvoiceTableAdapter2.ClearBeforeFill = true;
+            // 
+            // invoiceIdDataGridViewTextBoxColumn
+            // 
+            invoiceIdDataGridViewTextBoxColumn.DataPropertyName = "InvoiceId";
+            invoiceIdDataGridViewTextBoxColumn.HeaderText = "InvoiceId";
+            invoiceIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            invoiceIdDataGridViewTextBoxColumn.Name = "invoiceIdDataGridViewTextBoxColumn";
+            invoiceIdDataGridViewTextBoxColumn.ReadOnly = true;
+            invoiceIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // invoiceDateDataGridViewTextBoxColumn
+            // 
+            invoiceDateDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDate";
+            invoiceDateDataGridViewTextBoxColumn.HeaderText = "InvoiceDate";
+            invoiceDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            invoiceDateDataGridViewTextBoxColumn.Name = "invoiceDateDataGridViewTextBoxColumn";
+            invoiceDateDataGridViewTextBoxColumn.ReadOnly = true;
+            invoiceDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerIdDataGridViewTextBoxColumn
+            // 
+            customerIdDataGridViewTextBoxColumn.DataPropertyName = "CustomerId";
+            customerIdDataGridViewTextBoxColumn.HeaderText = "CustomerId";
+            customerIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            customerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            customerIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            customerNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // shippingDataGridViewTextBoxColumn
+            // 
+            shippingDataGridViewTextBoxColumn.DataPropertyName = "Shipping";
+            shippingDataGridViewTextBoxColumn.HeaderText = "Shipping";
+            shippingDataGridViewTextBoxColumn.MinimumWidth = 6;
+            shippingDataGridViewTextBoxColumn.Name = "shippingDataGridViewTextBoxColumn";
+            shippingDataGridViewTextBoxColumn.ReadOnly = true;
+            shippingDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // otherDataGridViewTextBoxColumn
+            // 
+            otherDataGridViewTextBoxColumn.DataPropertyName = "Other";
+            otherDataGridViewTextBoxColumn.HeaderText = "Other";
+            otherDataGridViewTextBoxColumn.MinimumWidth = 6;
+            otherDataGridViewTextBoxColumn.Name = "otherDataGridViewTextBoxColumn";
+            otherDataGridViewTextBoxColumn.ReadOnly = true;
+            otherDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            commentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            commentDataGridViewTextBoxColumn.ReadOnly = true;
+            commentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regUserDataGridViewTextBoxColumn
+            // 
+            regUserDataGridViewTextBoxColumn.DataPropertyName = "RegUser";
+            regUserDataGridViewTextBoxColumn.HeaderText = "RegUser";
+            regUserDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regUserDataGridViewTextBoxColumn.Name = "regUserDataGridViewTextBoxColumn";
+            regUserDataGridViewTextBoxColumn.ReadOnly = true;
+            regUserDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regDateDataGridViewTextBoxColumn
+            // 
+            regDateDataGridViewTextBoxColumn.DataPropertyName = "RegDate";
+            regDateDataGridViewTextBoxColumn.HeaderText = "RegDate";
+            regDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regDateDataGridViewTextBoxColumn.Name = "regDateDataGridViewTextBoxColumn";
+            regDateDataGridViewTextBoxColumn.ReadOnly = true;
+            regDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // regTimeDataGridViewTextBoxColumn
+            // 
+            regTimeDataGridViewTextBoxColumn.DataPropertyName = "RegTime";
+            regTimeDataGridViewTextBoxColumn.HeaderText = "RegTime";
+            regTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            regTimeDataGridViewTextBoxColumn.Name = "regTimeDataGridViewTextBoxColumn";
+            regTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            regTimeDataGridViewTextBoxColumn.Width = 125;
             // 
             // FacturasVentasFrm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 755);
+            ClientSize = new Size(800, 785);
+            Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(cu_id_textBox1);
             Controls.Add(label7);
@@ -505,12 +688,13 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)other_numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)accDataSet3).EndInit();
             ((System.ComponentModel.ISupportInitialize)shipping_numericUpDown1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)accDataSet2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -559,7 +743,26 @@
         private Label label9;
         private Panel panel2;
         private Button pro_list_button1;
-        private BindingSource bindingSource1;
         private DataSet.AccDataSet accDataSet2;
+        private BindingSource bindingSource3;
+        private DataGridView dataGridView1;
+        private DataSet.AccDataSet accDataSet3;
+        private DataSet.AccDataSetTableAdapters.SalesInvoiceTableAdapter salesInvoiceTableAdapter2;
+        private DataGridViewTextBoxColumn CustomerId;
+        private DataGridViewTextBoxColumn InvoiceDate;
+        private DataGridViewTextBoxColumn CustomerName;
+        private DataGridViewTextBoxColumn Shipping;
+        private DataGridViewTextBoxColumn Other;
+        private DataGridViewTextBoxColumn Comment;
+        private DataGridViewTextBoxColumn invoiceIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn invoiceDateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn shippingDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn otherDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regUserDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regDateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn regTimeDataGridViewTextBoxColumn;
     }
 }

@@ -57,7 +57,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             is_del_butt = false;
             new_edit_del_butts();
             //----------
-            this.bindingSource1.AddNew();
+            this.bindingSource3.AddNew();
             //------------------
             this.invoice_id_textBox1.Text = selected_invoice_id.ToString();
             //------------------
@@ -67,7 +67,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             //------------------
         }
 
-      
+
 
         private void edit_butt_Click(object sender, EventArgs e)
         {
@@ -87,7 +87,7 @@ namespace SoftwareDeContabilidad.Contabilidad
             is_del_butt = true;
             new_edit_del_butts();
             //-------------
-            this.bindingSource1.RemoveCurrent();
+            this.bindingSource3.RemoveCurrent();
         }
 
         private void save_butt_Click(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace SoftwareDeContabilidad.Contabilidad
         {
             save_cancel_butts();
             //--------------
-            this.bindingSource1.CancelEdit();
+            this.bindingSource3.CancelEdit();
             this.accDataSet1.SalesInvoiceProducts.RejectChanges();
         }
 
@@ -178,6 +178,26 @@ namespace SoftwareDeContabilidad.Contabilidad
             save_cancel_butts();
             this.salesInvoiceProductsTableAdapter1.FillBy_InvoiceId(this.accDataSet1.SalesInvoiceProducts, selected_invoice_id);
             //----------------------
+        }
+
+
+
+        private void new_butt_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void cu_search_button1_Click(object sender, EventArgs e)
+        {
+            SoftwareDeContabilidad.Contabilidad.BuscarProductFrm frm = new BuscarProductFrm();
+            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                this.products_id_textBox1.Text = frm.search_id_textBox1.Text;
+                this.product_name_textBox3.Text = frm.search_Prodname_textBox2.Text;
+            }
         }
 
         //private void Qty_nud_ValueChanged(object sender, EventArgs e)

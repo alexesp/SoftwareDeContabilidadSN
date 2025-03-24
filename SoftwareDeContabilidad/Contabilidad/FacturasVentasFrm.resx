@@ -204,41 +204,44 @@
   <data name="search_butt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ01MTDThZNQE
-        D9vWxHfxLUxAH4WrkSPSroyZdgsyukhhUQ/7Jc0eZradzvwzjaKSkpIVqd5iDYS+iYV5ht54BOfDd/uV
-        5imW+rqqcI//UxiQTE6zwzB/jV9Bpif8340Bae5nh4jJIwjT2lfTRtTBHfqCMm2Qpj/3MXd8j7WxN7cb
-        D9O6nJxFEVa4jwMrsdQX5Ef+jSQ95h7B2JpnaXeH/4wLwpVjY02Q4Hza82/OwQoIM7BBC33FrUFYtbua
-        trhtGSDTTqaHPrcF4dNvBRcAKGz6MnBbELbPpUFSO7ctReFuJtwpNwWxcQZ64xG3BUETzm6kTJvbllFP
-        0qNCNEDjdb7R6l3gxVsX+pJbg6A+duPVIPU3t38HCN21h8u3l1oPq9weDM32TFCpCyIvE9T/uuuFC4l+
-        4B5rQ7M9KwXNhIHtc4VNq3aFTar5bGZ8XkW+CTTbfTnyFqWdbr61IEgTNF7dy0fBDKdZq/ZJcL7mCxkr
-        OohVKYPwfAlCmUPus3UWglDmgNt/Bbr5nx1e8u/5AEEJiH+noe5FAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGpSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AFzUx8WDCyagJ
+        Hratie/iW5iAvgQPYeSItCtjpt2CjC5SWNTDfkmzh5ltpzP/TKOopKRkRaq3WAOhb2JhnqE3HsHx8N1+
+        pXmKpb6uKtzj/xQGJJOz7DDMX+NXkOkp/3djQJr72SFi8gjCtPbVtBF1cIe+oEwbpOnPfcwd32Nt7M3t
+        xsO0LifnUYQV7uPASiz1BfmRfyNJT7hHMLbmWdrd4T/jgnDl2FgTJDif9vybc7ACwgxs0EJfcWsQVu2u
+        pi1uWwbItJPpoc9tQfj0W8EFAAqbvgzcFoTtc2mQ1M5tS1G4mwl3yk1BbJyB3njEbUHQhLMbKdPmtmXU
+        k/SoEA3QeJ1vtHoXePHWhb7k1iCoj914NUj9ze3fAUJ37eHy7aXWwyq3B0OzPRNU6oLIywT1v+564UKi
+        H7jH2tBsz0pBM2Fg+1xh06pdYZNqPpsZn1eRbwLNdl+OvEVpp5tvLQjSBI1X9/JRMMNp1qp9Epyv+ULG
+        ig5iVcogPF+CUOaQ+2ydhSCUOeD2X4Fu/meHl/x7PgAB6IgGglCq0wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
+  <metadata name="bindingSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 25</value>
   </metadata>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
+  <metadata name="accDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 25</value>
   </metadata>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
+  <metadata name="CustomerId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
+  <metadata name="InvoiceDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="accDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>328, 21</value>
+  <metadata name="CustomerName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
+  <metadata name="Shipping.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="accDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>328, 21</value>
+  <metadata name="Other.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="salesInvoiceTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>482, 17</value>
+  <metadata name="Comment.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="salesInvoiceTableAdapter2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>485, 25</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>97</value>
+    <value>142</value>
   </metadata>
 </root>

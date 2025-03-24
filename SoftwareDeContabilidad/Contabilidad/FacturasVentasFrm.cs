@@ -64,7 +64,7 @@ namespace SoftwareDeContabilidad.Contabilidad
 
             //---------------------------
 
-            this.bindingSource1.AddNew();
+            this.bindingSource3.AddNew();
 
             //-----------------------------
             this.reg_user_label11.Text = "Login User";
@@ -76,7 +76,7 @@ namespace SoftwareDeContabilidad.Contabilidad
         {
             save_cancel_butts();
             //---------------------------------
-            this.salesInvoiceTableAdapter1.Fill_All(this.accDataSet2.SalesInvoice);
+            this.salesInvoiceTableAdapter2.Fill_All(this.accDataSet3.SalesInvoice);
         }
 
         private void edit_butt_Click(object sender, EventArgs e)
@@ -95,16 +95,16 @@ namespace SoftwareDeContabilidad.Contabilidad
             new_edit_del_butts();
             //-------------------------
 
-            this.bindingSource1.RemoveCurrent();
+            this.bindingSource3.RemoveCurrent();
         }
 
         private void save_butt_Click(object sender, EventArgs e)
         {
             try
             {
-                this.bindingSource1.EndEdit();
+                this.bindingSource3.EndEdit();
                 int rv;
-                rv = this.salesInvoiceTableAdapter1.Update(this.accDataSet2.SalesInvoice);
+                rv = this.salesInvoiceTableAdapter2.Update(this.accDataSet2.SalesInvoice);
                 //-----------------------------------------------------------------------
                 if (rv > 0)
                 {
@@ -128,20 +128,20 @@ namespace SoftwareDeContabilidad.Contabilidad
             save_cancel_butts();
             //-----------------------
 
-            this.bindingSource1.CancelEdit();
+            this.bindingSource3.CancelEdit();
             this.accDataSet2.Products.RejectChanges();
         }
 
         private void cu_search_button1_Click(object sender, EventArgs e)
         {
-            SoftwareDeContabilidad.Contabilidad.BuscarClienteFrm frm = new BuscarClienteFrm();
+            SoftwareDeContabilidad.Contabilidad.BuscarProductFrm frm = new BuscarProductFrm();
             frm.ShowDialog();
             if (frm.DialogResult == DialogResult.OK)
             {
                 this.cu_id_textBox1.Text = frm.id_label4.Text;
                 string a;
-                a = frm.fname_label5.Text + "  " + frm.lname_label6.Text;
-                this.cu_name_textBox3.Text = a;
+                //a = frm.ProductName_label5.Text + "  " + frm.lname_label6.Text;
+                //this.cu_name_textBox3.Text = a;
 
 
 
@@ -153,7 +153,7 @@ namespace SoftwareDeContabilidad.Contabilidad
         private void pro_list_button1_Click(object sender, EventArgs e)
         {
             SoftwareDeContabilidad.Contabilidad.FacturasVentasProdFrm frm = new FacturasVentasProdFrm();
-            frm.selected_invoice_id = int.Parse(this.id_textBox1.Text);
+            frm.selected_invoice_id = int.Parse(this.cu_id_textBox1.Text);
             frm.ShowDialog();
         }
     }

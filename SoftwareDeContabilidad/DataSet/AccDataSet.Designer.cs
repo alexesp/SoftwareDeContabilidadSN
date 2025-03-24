@@ -2146,7 +2146,15 @@ namespace SoftwareDeContabilidad.DataSet {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnProductName.MaxLength = 90;
+                this.columnQty.DefaultValue = ((int)(0));
+                this.columnUnit.DefaultValue = ((string)("0"));
                 this.columnUnit.MaxLength = 50;
+                this.columnUnitPrice.DefaultValue = ((decimal)(0m));
+                this.columnDiscount.DefaultValue = ((decimal)(0m));
+                this.columnAmount.DefaultValue = ((decimal)(0m));
+                this.columnTaxRate.DefaultValue = ((decimal)(0m));
+                this.columnTaxSum.DefaultValue = ((decimal)(0m));
+                this.columnNetAmount.DefaultValue = ((decimal)(0m));
                 this.columnComment.MaxLength = 150;
                 this.columnRegUser.MaxLength = 50;
             }
