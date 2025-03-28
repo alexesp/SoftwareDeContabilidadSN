@@ -69,18 +69,7 @@ namespace SoftwareDeContabilidad.Contabilidad
 
 
 
-        private void edit_butt_Click(object sender, EventArgs e)
-        {
-            is_del_butt = false;
-            new_edit_del_butts();
-            //------------------
-            this.invoice_id_textBox1.Text = selected_invoice_id.ToString();
-            //------------------
-            //this.reg_user_label11.Text = AccountigSoft.Properties.Settings.Default.login_user_name;
-            this.reg_date_label12.Text = DateTime.Now.ToShortDateString();
-            this.reg_time_label14.Text = DateTime.Now.ToString("HH:mm:ss");
-            //------------------
-        }
+      
 
         private void del_butt_Click(object sender, EventArgs e)
         {
@@ -187,7 +176,7 @@ namespace SoftwareDeContabilidad.Contabilidad
 
         }
 
-       
+
 
         private void cu_search_button1_Click(object sender, EventArgs e)
         {
@@ -198,6 +187,18 @@ namespace SoftwareDeContabilidad.Contabilidad
                 this.products_id_textBox1.Text = frm.search_id_textBox1.Text;
                 this.product_name_textBox3.Text = frm.search_Prodname_textBox2.Text;
             }
+        }
+
+        private void edit_butt_Click_1(object sender, EventArgs e)
+        {
+            is_del_butt = false;
+            new_edit_del_butts();
+            //------------------
+            this.invoice_id_textBox1.Text = selected_invoice_id.ToString();
+            //------------------
+            //this.reg_user_label11.Text = AccountigSoft.Properties.Settings.Default.login_user_name;
+            this.reg_date_label12.Text = DateTime.Now.ToShortDateString();
+            this.reg_time_label14.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
         //private void Qty_nud_ValueChanged(object sender, EventArgs e)

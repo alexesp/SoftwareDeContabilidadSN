@@ -204,26 +204,14 @@
   <data name="search_butt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGoSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AJ0lMPJhwMmqC
-        h21r4rv4Fiagb8EzGDki7cqYabcgo4sUFvWwX9LsYWbb6cw/0ygqKSlZk+ot1kDom1iYZ+hPxtAdvduv
-        NE+x1NdVhQf8n8KAZHqWHYb5a/IKMu3yf7cGpLmfHyKmjyBM61DNGlEH9+gLyrRBmsHCx9zxPTbG3txu
-        PErrcnoeRVjhPg6sxFJfkB/5N5L0lHsEY2uepd0d/jMuCFeOrTVBgvNpz785BysgzNAGLfQVtwZh1e5q
-        2uK2VYBMO5keBtwWhE+/FVwAoLDpy8BtQdg+lwZJ7dy2EoX7mXBn3BTE1hnoT8bcFgRNOLuRMm1uW0U9
-        SU8K0QCN18VG63eBF29d6EtuDYL62I1Xg9Tf3P4dIHTPHi7fXmp9rHJ7MDTbM0GlLoi8TFD/654XLiT6
-        gXtsDM32rBQ0E4a2zxU2rdoVNqnm85nxeRX5JtBs9+XIW5R2uvnOgiBN0Hh1Lx8FM5plrTogwfmaL2Ws
-        6CDWpQzC8yUIZY65z85ZCkKZI27/Fejmf3Z4yb/nA8eGiBwLSA2vAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGpSURBVFhH7ZXBTgIxEIaX6B3JMsgTGe+AFzUx8WDCyagJ
+        Hratie/iW5iAvgQPYeSItCtjpt2CjC5SWNTDfkmzh5ltpzP/TKOopKRkRaq3WAOhb2JhnqE3HsHx8N1+
+        pXmKpb6uKtzj/xQGJJOz7DDMX+NXkOkp/3djQJr72SFi8gjCtPbVtBF1cIe+oEwbpOnPfcwd32Nt7M3t
+        xsO0LifnUYQV7uPASiz1BfmRfyNJT7hHMLbmWdrd4T/jgnDl2FgTJDif9vybc7ACwgxs0EJfcWsQVu2u
+        pi1uWwbItJPpoc9tQfj0W8EFAAqbvgzcFoTtc2mQ1M5tS1G4mwl3yk1BbJyB3njEbUHQhLMbKdPmtmXU
+        k/SoEA3QeJ1vtHoXePHWhb7k1iCoj914NUj9ze3fAUJ37eHy7aXWwyq3B0OzPRNU6oLIywT1v+564UKi
+        H7jH2tBsz0pBM2Fg+1xh06pdYZNqPpsZn1eRbwLNdl+OvEVpp5tvLQjSBI1X9/JRMMNp1qp9Epyv+ULG
+        ig5iVcogPF+CUOaQ+2ydhSCUOeD2X4Fu/meHl/x7PgAB6IgGglCq0wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bindingSource3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>322, 18</value>
-  </metadata>
-  <metadata name="accDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 17</value>
-  </metadata>
-  <metadata name="salesInvoiceProductsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>502, 18</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>89</value>
-  </metadata>
 </root>

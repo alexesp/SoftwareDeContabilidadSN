@@ -44,6 +44,7 @@
             search_butt = new ToolStripButton();
             toolStripSeparator6 = new ToolStripSeparator();
             groupBox1 = new GroupBox();
+            cu_search_button1 = new Button();
             label19 = new Label();
             net_amount_numericUpDown1 = new NumericUpDown();
             bindingSource3 = new BindingSource(components);
@@ -101,7 +102,6 @@
             products_id_textBox1 = new TextBox();
             label7 = new Label();
             salesInvoiceProductsTableAdapter1 = new SoftwareDeContabilidad.DataSet.AccDataSetTableAdapters.SalesInvoiceProductsTableAdapter();
-            cu_search_button1 = new Button();
             toolStrip1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)net_amount_numericUpDown1).BeginInit();
@@ -154,6 +154,7 @@
             edit_butt.Size = new Size(90, 51);
             edit_butt.Text = "Editar";
             edit_butt.TextImageRelation = TextImageRelation.ImageAboveText;
+            edit_butt.Click += edit_butt_Click_1;
             // 
             // toolStripSeparator2
             // 
@@ -268,6 +269,16 @@
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informacion";
+            // 
+            // cu_search_button1
+            // 
+            cu_search_button1.Location = new Point(13, 107);
+            cu_search_button1.Name = "cu_search_button1";
+            cu_search_button1.Size = new Size(176, 33);
+            cu_search_button1.TabIndex = 45;
+            cu_search_button1.Text = "Nombre del Cliente:";
+            cu_search_button1.UseVisualStyleBackColor = true;
+            cu_search_button1.Click += cu_search_button1_Click;
             // 
             // label19
             // 
@@ -798,16 +809,6 @@
             // salesInvoiceProductsTableAdapter1
             // 
             salesInvoiceProductsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // cu_search_button1
-            // 
-            cu_search_button1.Location = new Point(13, 107);
-            cu_search_button1.Name = "cu_search_button1";
-            cu_search_button1.Size = new Size(176, 33);
-            cu_search_button1.TabIndex = 45;
-            cu_search_button1.Text = "Nombre del Cliente:";
-            cu_search_button1.UseVisualStyleBackColor = true;
-            cu_search_button1.Click += cu_search_button1_Click;
             // 
             // FacturasVentasProdFrm
             // 
